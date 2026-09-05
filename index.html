@@ -58,11 +58,13 @@
     .course-card li { margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-muted); }
 
     /* Form Section */
-    .form-section { background: #ffffff; padding: 2.5rem; border-radius: 16px; border: 1px solid #e2e8f0; max-width: 600px; margin: 0 auto; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); }
+    .form-section { background: #ffffff; padding: 2.5rem; border-radius: 16px; border: 1px solid #e2e8f0; max-width: 700px; margin: 0 auto; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); }
     .form-group { margin-bottom: 1.2rem; }
     .form-group label { display: block; font-weight: 600; margin-bottom: 0.4rem; font-size: 0.9rem; color: #334155; }
     .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.8rem; border: 1px solid #cbd5e0; border-radius: 8px; font-size: 0.95rem; outline: none; }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary); }
+    .form-row { display: flex; gap: 15px; flex-wrap: wrap; }
+    .form-row .form-group { flex: 1; min-width: 200px; }
     .btn-submit { width: 100%; background: var(--primary); color: white; border: none; padding: 0.9rem; font-size: 1rem; font-weight: 700; border-radius: 8px; cursor: pointer; transition: background 0.2s; }
     .btn-submit:hover { background: var(--primary-hover); }
 
@@ -110,7 +112,7 @@
     
     <div class="cta-buttons">
       <a href="#courses" class="btn btn-secondary">Explore Courses</a>
-      <a href="#admission" class="btn btn-primary">Book Free Demo Class</a>
+      <a href="#admission" class="btn btn-primary">Apply For Admission</a>
     </div>
 
     <!-- STATS -->
@@ -164,51 +166,82 @@
     </div>
   </section>
 
-  <!-- AUTOMATIC NOTIFICATION ADMISSION FORM -->
+  <!-- COMPLETE ONLINE ADMISSION FORM -->
   <section id="admission">
     <div class="section-container">
       <div class="section-header">
         <p>// Direct Admission</p>
-        <h2>ONLINE ENQUIRY FORM</h2>
+        <h2>ONLINE ADMISSION FORM</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 5px;">Form bharein. Verification ke baad hum aapko admission confirmation ke liye call/WhatsApp karenge.</p>
       </div>
 
       <div class="form-section">
-        <form action="https://api.web3forms.com/submit" method="POST">
+        <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
           
-          <!-- ACCESS KEY ADDED HERE -->
+          <!-- ACCESS KEY & EMAIL SUBJECT -->
           <input type="hidden" name="access_key" value="1bd4d7e3-38cf-4cc9-af1f-c3429fb81bc6">
-          <input type="hidden" name="subject" value="New Admission Enquiry - Nitesh Classes">
+          <input type="hidden" name="subject" value="New Admission Application - Nitesh Classes">
+          <input type="hidden" name="from_name" value="Nitesh Classes Website">
 
           <div class="form-group">
-            <label>Student Full Name</label>
-            <input type="text" name="Student Name" placeholder="Student ka naam likhein" required>
+            <label>Student Full Name *</label>
+            <input type="text" name="Student Name" placeholder="Student ka poora naam" required>
           </div>
 
           <div class="form-group">
-            <label>Mobile / WhatsApp Number</label>
-            <input type="tel" name="Mobile Number" placeholder="10-digit phone number" required>
+            <label>Father's / Guardian Name *</label>
+            <input type="text" name="Father Name" placeholder="Pita ka naam" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Mobile Number *</label>
+              <input type="tel" name="Mobile Number" pattern="[0-9]{10}" placeholder="10-digit number" required>
+            </div>
+            <div class="form-group">
+              <label>WhatsApp Number *</label>
+              <input type="tel" name="WhatsApp Number" pattern="[0-9]{10}" placeholder="10-digit number" required>
+            </div>
           </div>
 
           <div class="form-group">
-            <label>Select Class</label>
-            <select name="Class" required>
+            <label>Select Class for Admission *</label>
+            <select name="Target Class" required>
               <option value="">-- Class Select Karein --</option>
               <option value="Class 6th">Class 6th</option>
               <option value="Class 7th">Class 7th</option>
               <option value="Class 8th">Class 8th</option>
               <option value="Class 9th">Class 9th</option>
               <option value="Class 10th">Class 10th</option>
-              <option value="Class 11th">Class 11th</option>
-              <option value="Class 12th">Class 12th</option>
+              <option value="Class 11th (PCM)">Class 11th (PCM)</option>
+              <option value="Class 11th (PCB)">Class 11th (PCB)</option>
+              <option value="Class 12th (PCM)">Class 12th (PCM)</option>
+              <option value="Class 12th (PCB)">Class 12th (PCB)</option>
             </select>
           </div>
 
-          <div class="form-group">
-            <label>Subjects / Additional Details</label>
-            <textarea name="Message" rows="3" placeholder="Kaunse subjects padhna chahte hain ya koi question ho..."></textarea>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Previous School Name *</label>
+              <input type="text" name="Previous School" placeholder="School ka naam" required>
+            </div>
+            <div class="form-group">
+              <label>Last Class % / Grade *</label>
+              <input type="text" name="Last Class Marks" placeholder="e.g. 85%" required>
+            </div>
           </div>
 
-          <button type="submit" class="btn-submit">Submit Admission Enquiry 🚀</button>
+          <div class="form-group">
+            <label>Full Address *</label>
+            <textarea name="Address" rows="2" placeholder="Apna poora pata bharein..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Upload Student Photo or Marksheet (Optional)</label>
+            <input type="file" name="Student Document" accept="image/*, application/pdf" style="background: #f8fafc; padding: 0.5rem;">
+          </div>
+
+          <button type="submit" class="btn-submit">Submit Application For Admission 🚀</button>
         </form>
       </div>
     </div>
@@ -278,9 +311,9 @@
       let reply = 'That\'s a good question! For detailed info, call us or visit our center. Ask me about: fees, classes, subjects, timings, or demo class!';
       
       if (/(fee|fees|cost|charge)/.test(s)) {
-        reply = 'Our fee structure is very affordable! Please submit the Enquiry Form or visit our center for class-wise fee details.';
-      } else if (/(demo|class|book|join)/.test(s)) {
-        reply = 'Great choice! Just fill the Enquiry Form above with your name, class, and phone number to book a FREE Demo class. 🚀';
+        reply = 'Our fee structure is very affordable! Please submit the Admission Form above or visit our center for class-wise fee details.';
+      } else if (/(demo|class|book|join|admission)/.test(s)) {
+        reply = 'Great choice! Fill out the Online Admission Form on the website with your details, and we will contact you for admission. 🚀';
       } else if (/(subject|math|science|social|sst)/.test(s)) {
         reply = 'We specialize in: Mathematics, Science (Physics, Chemistry, Biology), and Social Studies for Classes 6th to 12th.';
       } else if (/(where|location|address|gamharia)/.test(s)) {
