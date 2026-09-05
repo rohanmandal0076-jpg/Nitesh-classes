@@ -1,580 +1,284 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nitesh Classes — Gamharia, Jharkhand</title>
+  <title>Nitesh Classes Chhota Gamharia | Best Coaching Class 6th-12th</title>
+  <meta name="description" content="Nitesh Classes, Chhota Gamharia, Jharkhand - Premium coaching for Class 6th to 12th (Maths, Science, SST, PCM, PCB).">
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     :root {
       --primary: #2563eb;
       --primary-hover: #1d4ed8;
-      --bg-dark: #0f172a;
-      --text-main: #0f172a;
-      --text-muted: #64748b;
+      --accent: #f59e0b;
+      --dark: #0f172a;
+      --light-bg: #f8fafc;
       --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
     }
-    
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-    body { background-color: #f8fafc; color: var(--text-main); line-height: 1.6; }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+    body { background-color: var(--light-bg); color: var(--text); line-height: 1.6; }
 
     /* Navigation */
-    nav { background: #ffffff; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 100; padding: 1rem 2rem; }
-    .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-    .brand { text-decoration: none; color: var(--text-main); font-weight: 800; font-size: 1.25rem; }
-    .brand p { font-size: 0.8rem; color: var(--text-muted); font-weight: normal; }
-    .nav-links a { text-decoration: none; color: #334155; margin-left: 1.5rem; font-weight: 500; font-size: 0.95rem; }
+    nav { position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e2e8f0; z-index: 1000; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; }
+    .brand { display: flex; flex-direction: column; text-decoration: none; }
+    .brand-title { font-size: 1.3rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+    .brand-sub { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; }
+    .nav-links { display: flex; gap: 20px; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.95rem; transition: 0.2s; }
     .nav-links a:hover { color: var(--primary); }
+    .btn-nav { background: var(--primary); color: #fff !important; padding: 8px 18px; border-radius: 50px; }
 
     /* Hero Section */
-    .hero { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; text-align: center; }
-    .badge { background: #dbeafe; color: #1e40af; padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; display: inline-block; margin-bottom: 1.5rem; }
-    .hero h1 { font-size: 2.8rem; font-weight: 900; line-height: 1.2; letter-spacing: -1px; margin-bottom: 1.5rem; color: #0f172a; }
-    .hero h1 span { color: var(--primary); }
-    .hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 2rem auto; }
-    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
-    .btn { text-decoration: none; padding: 0.8rem 1.8rem; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: all 0.2s; }
-    .btn-primary { background: var(--primary); color: white; }
-    .btn-primary:hover { background: var(--primary-hover); }
-    .btn-secondary { background: #e2e8f0; color: #1e293b; }
-    
-    /* Stats */
-    .stats { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem; border-top: 1px solid #e2e8f0; padding-top: 2rem; }
-    .stat-box { text-align: center; }
-    .stat-box span { font-size: 2.2rem; font-weight: 800; color: var(--primary); }
-    .stat-box p { font-size: 0.9rem; color: var(--text-muted); font-weight: 500; }
+    .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); color: white; text-align: center; padding: 80px 20px; position: relative; overflow: hidden; }
+    .hero-badge { background: rgba(37, 99, 235, 0.3); color: #93c5fd; padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; border: 1px solid rgba(147, 197, 253, 0.3); display: inline-block; margin-bottom: 20px; }
+    .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 15px; line-height: 1.2; }
+    .hero h1 span { color: var(--accent); }
+    .hero p { font-size: 1.1rem; color: #cbd5e1; max-width: 650px; margin: 0 auto 30px auto; }
+    .hero-cta { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+    .btn-main { background: var(--primary); color: white; text-decoration: none; padding: 14px 28px; border-radius: 10px; font-weight: 700; transition: 0.3s; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); }
+    .btn-main:hover { background: var(--primary-hover); transform: translateY(-2px); }
+    .btn-secondary { background: rgba(255, 255, 255, 0.1); color: white; text-decoration: none; padding: 14px 28px; border-radius: 10px; font-weight: 700; border: 1px solid rgba(255,255,255,0.2); transition: 0.3s; }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.2); }
 
-    /* Common Sections */
-    section { padding: 4rem 1.5rem; }
-    .section-container { max-width: 1100px; margin: 0 auto; }
-    .section-header { text-align: center; margin-bottom: 3rem; }
-    .section-header p { color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
-    .section-header h2 { font-size: 2rem; font-weight: 800; margin-top: 0.5rem; }
+    /* Stats Section */
+    .stats { display: flex; justify-content: center; gap: 40px; margin-top: 50px; flex-wrap: wrap; }
+    .stat-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.1); padding: 20px 30px; border-radius: 12px; min-width: 150px; }
+    .stat-card h3 { font-size: 2rem; color: var(--accent); font-weight: 800; }
+    .stat-card p { font-size: 0.85rem; color: #94a3b8; margin: 0; }
+
+    /* Main Container */
+    .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+    .section-title { text-align: center; margin-bottom: 40px; }
+    .section-title h2 { font-size: 2rem; font-weight: 800; color: var(--dark); }
+    .section-title p { color: var(--text-muted); font-size: 1rem; }
 
     /* Courses Grid */
-    .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-    .course-card { background: white; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
-    .course-card h3 { font-size: 1.4rem; margin-bottom: 0.8rem; color: #0f172a; }
-    .course-card ul { list-style: none; margin-top: 1rem; }
-    .course-card li { margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-muted); }
+    .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+    .course-card { background: var(--card-bg); border-radius: 16px; padding: 30px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); transition: 0.3s; position: relative; }
+    .course-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); border-color: var(--primary); }
+    .course-card h3 { font-size: 1.4rem; color: var(--dark); margin-bottom: 10px; }
+    .course-card ul { list-style: none; margin: 20px 0; }
+    .course-card ul li { margin-bottom: 10px; color: var(--text-muted); font-size: 0.95rem; display: flex; align-items: center; gap: 10px; }
+    .course-card ul li i { color: #10b981; }
 
-    /* Form Section */
-    .form-section { background: #ffffff; padding: 2.5rem; border-radius: 16px; border: 1px solid #e2e8f0; max-width: 700px; margin: 0 auto; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); }
-    .form-group { margin-bottom: 1.2rem; }
-    .form-group label { display: block; font-weight: 600; margin-bottom: 0.4rem; font-size: 0.9rem; color: #334155; }
-    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.8rem; border: 1px solid #cbd5e0; border-radius: 8px; font-size: 0.95rem; outline: none; }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary); }
-    .form-row { display: flex; gap: 15px; flex-wrap: wrap; }
-    .form-row .form-group { flex: 1; min-width: 200px; }
-    .btn-submit { width: 100%; background: var(--primary); color: white; border: none; padding: 0.9rem; font-size: 1rem; font-weight: 700; border-radius: 8px; cursor: pointer; transition: background 0.2s; }
+    /* Admission Form */
+    .admission-section { background: #ffffff; border-radius: 20px; padding: 40px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(0,0,0,0.04); max-width: 700px; margin: 0 auto; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.9rem; }
+    .form-group input, .form-group select { width: 100%; padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; outline: none; transition: 0.2s; }
+    .form-group input:focus, .form-group select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
+    .btn-submit { width: 100%; background: var(--primary); color: white; border: none; padding: 14px; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: 0.3s; }
     .btn-submit:hover { background: var(--primary-hover); }
 
-    /* Location & Footer */
-    .location-card { background: #ffffff; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0; max-width: 700px; margin: 0 auto; text-align: center; }
-    footer { background: #0f172a; color: white; text-align: center; padding: 2rem 1.5rem; margin-top: 4rem; font-size: 0.9rem; }
+    /* Footer */
+    footer { background: var(--dark); color: #94a3b8; text-align: center; padding: 30px 20px; margin-top: 60px; font-size: 0.9rem; }
+    footer p { margin-bottom: 5px; }
 
-    /* Chatbot Floating Styles */
-    .chat-widget { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
-    .chat-btn { background: var(--primary); color: white; border: none; padding: 12px 20px; border-radius: 50px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-    .chat-box { display: none; position: fixed; bottom: 80px; right: 20px; width: 320px; background: white; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); border: 1px solid #e2e8f0; overflow: hidden; }
-    .chat-header { background: var(--primary); color: white; padding: 12px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
-    .chat-logs { height: 250px; padding: 10px; overflow-y: auto; font-size: 0.85rem; }
-    .chat-msg { margin-bottom: 8px; padding: 8px 12px; border-radius: 8px; max-width: 80%; }
-    .chat-msg.user { background: #dbeafe; margin-left: auto; color: #1e40af; }
-    .chat-msg.bot { background: #f1f5f9; color: #334155; }
-    .chat-input-area { display: flex; border-top: 1px solid #e2e8f0; }
-    .chat-input-area input { flex: 1; border: none; padding: 10px; outline: none; font-size: 0.85rem; }
-    .chat-input-area button { background: var(--primary); color: white; border: none; padding: 10px 15px; cursor: pointer; }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .nav-links { display: none; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- Navigation Bar -->
   <nav>
-    <div class="nav-container">
-      <a href="#home" class="brand">
-        NITESH CLASSES
-        <p>Gamharia · Jharkhand</p>
-      </a>
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#courses">Courses</a>
-        <a href="#admission">Admission</a>
-        <a href="#location">Location</a>
-      </div>
+    <a href="#home" class="brand">
+      <span class="brand-title">NITESH CLASSES</span>
+      <span class="brand-sub">Chhota Gamharia · Jharkhand</span>
+    </a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#courses">Courses</a>
+      <a href="#admission" class="btn-nav">Admission</a>
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
-  <section id="home" class="hero">
-    <div class="badge">Admissions Open · Session 2026–27</div>
-    <h1>FUTURE-READY<br><span>LEARNING STARTS HERE.</span></h1>
-    <p><strong>Nitesh Classes</strong>, Gamharia — Jharkhand's trusted coaching institute for <strong>Class 6th to 12th</strong>. Master Math, Science & Social Studies with concept-first teaching and personal mentoring.</p>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <span class="hero-badge"><i class="fa-solid fa-graduation-cap"></i> Admissions Open 2026–27</span>
+    <h1>FUTURE-READY <br><span>LEARNING STARTS HERE.</span></h1>
+    <p>Chhota Gamharia's trusted coaching institute for Class 6th to 12th. Concept-first teaching & personal mentoring.</p>
     
-    <div class="cta-buttons">
-      <a href="#courses" class="btn btn-secondary">Explore Courses</a>
-      <a href="#admission" class="btn btn-primary">Apply For Admission</a>
+    <div class="hero-cta">
+      <a href="#courses" class="btn-main">Explore Courses</a>
+      <a href="#admission" class="btn-secondary">Apply For Admission</a>
     </div>
 
-    <!-- STATS -->
     <div class="stats">
-      <div class="stat-box">
-        <span class="counter" data-target="500">0</span><span>+</span>
+      <div class="stat-card">
+        <h3>500+</h3>
         <p>Students Taught</p>
       </div>
-      <div class="stat-box">
-        <span class="counter" data-target="95">0</span><span>%</span>
-        <p>Board Success</p>
+      <div class="stat-card">
+        <h3>95%+</h3>
+        <p>Board Success Rate</p>
       </div>
-      <div class="stat-box">
-        <span class="counter" data-target="3">0</span>
-        <p>Core Subjects</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- COURSES SECTION -->
-  <section id="courses" style="background: #f1f5f9;">
-    <div class="section-container">
-      <div class="section-header">
-        <p>// Our Programs</p>
-        <h2>COURSES & BATCHES</h2>
-      </div>
-
-      <div class="courses-grid">
-        <div class="course-card">
-          <h3>Class 6th – 10th</h3>
-          <p><strong>Foundation Track</strong> — Build rock-solid fundamentals in core subjects.</p>
-          <ul>
-            <li>✓ Mathematics — NCERT + Mental Math</li>
-            <li>✓ Science — Physics, Chemistry, Biology</li>
-            <li>✓ Social Studies — History, Civics, Geography</li>
-            <li>✓ Weekly tests & parent reports</li>
-          </ul>
-        </div>
-
-        <div class="course-card">
-          <h3>Class 11th – 12th</h3>
-          <p><strong>Board Mastery</strong> — Intensive JAC / CBSE board examination preparation.</p>
-          <ul>
-            <li>✓ Mathematics — Calculus, Algebra & Statistics</li>
-            <li>✓ Science — PCM / PCB core stream guidance</li>
-            <li>✓ Board-pattern mock tests</li>
-            <li>✓ Revision marathons & paper solving</li>
-          </ul>
-        </div>
+      <div class="stat-card">
+        <h3>Class 6-12</h3>
+        <p>JAC & CBSE Board</p>
       </div>
     </div>
   </section>
 
-  <!-- COMPLETE ONLINE ADMISSION FORM -->
-  <section id="admission">
-    <div class="section-container">
-      <div class="section-header">
-        <p>// Direct Admission</p>
-        <h2>ONLINE ADMISSION FORM</h2>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 5px;">Form bharein. Verification ke baad hum aapko admission confirmation ke liye call/WhatsApp karenge.</p>
-      </div>
-
-      <div class="form-section">
-        <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
-          
-          <!-- ACCESS KEY & EMAIL SUBJECT -->
-          <input type="hidden" name="access_key" value="1bd4d7e3-38cf-4cc9-af1f-c3429fb81bc6">
-          <input type="hidden" name="subject" value="New Admission Application - Nitesh Classes">
-          <input type="hidden" name="from_name" value="Nitesh Classes Website">
-
-          <div class="form-group">
-            <label>Student Full Name *</label>
-            <input type="text" name="Student Name" placeholder="Student ka poora naam" required>
-          </div>
-
-          <div class="form-group">
-            <label>Father's / Guardian Name *</label>
-            <input type="text" name="Father Name" placeholder="Pita ka naam" required>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label>Mobile Number *</label>
-              <input type="tel" name="Mobile Number" pattern="[0-9]{10}" placeholder="10-digit number" required>
-            </div>
-            <div class="form-group">
-              <label>WhatsApp Number *</label>
-              <input type="tel" name="WhatsApp Number" pattern="[0-9]{10}" placeholder="10-digit number" required>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label>Select Class for Admission *</label>
-            <select name="Target Class" required>
-              <option value="">-- Class Select Karein --</option>
-              <option value="Class 6th">Class 6th</option>
-              <option value="Class 7th">Class 7th</option>
-              <option value="Class 8th">Class 8th</option>
-              <option value="Class 9th">Class 9th</option>
-              <option value="Class 10th">Class 10th</option>
-              <option value="Class 11th (PCM)">Class 11th (PCM)</option>
-              <option value="Class 11th (PCB)">Class 11th (PCB)</option>
-              <option value="Class 12th (PCM)">Class 12th (PCM)</option>
-              <option value="Class 12th (PCB)">Class 12th (PCB)</option>
-            </select>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label>Previous School Name *</label>
-              <input type="text" name="Previous School" placeholder="School ka naam" required>
-            </div>
-            <div class="form-group">
-              <label>Last Class % / Grade *</label>
-              <input type="text" name="Last Class Marks" placeholder="e.g. 85%" required>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label>Full Address *</label>
-            <textarea name="Address" rows="2" placeholder="Apna poora pata bharein..." required></textarea>
-          </div>
-
-          <div class="form-group">
-            <label>Upload Student Photo or Marksheet (Optional)</label>
-            <input type="file" name="Student Document" accept="image/*, application/pdf" style="background: #f8fafc; padding: 0.5rem;">
-          </div>
-
-          <button type="submit" class="btn-submit">Submit Application For Admission 🚀</button>
-        </form>
-      </div>
+  <!-- Courses Section -->
+  <div class="container" id="courses">
+    <div class="section-title">
+      <h2>COURSES & BATCHES</h2>
+      <p>Structured coaching designed for board success and core clarity</p>
     </div>
-  </section>
 
-  <!-- LOCATION & CONTACT -->
-  <section id="location" style="background: #f1f5f9;">
-    <div class="section-container">
-      <div class="section-header">
-        <p>// Visit Us</p>
-        <h2>FIND US IN GAMHARIA</h2>
+    <div class="courses-grid">
+      <!-- Course 1 -->
+      <div class="course-card">
+        <h3>Class 6th – 10th</h3>
+        <p style="color: var(--primary); font-weight: 600;">Foundation Track</p>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> Mathematics — NCERT + Mental Math</li>
+          <li><i class="fa-solid fa-circle-check"></i> Science — Physics, Chemistry, Biology</li>
+          <li><i class="fa-solid fa-circle-check"></i> Social Studies — History, Civics, SST</li>
+          <li><i class="fa-solid fa-circle-check"></i> Weekly Tests & Progress Tracking</li>
+        </ul>
+        <a href="#admission" class="btn-main" style="display: inline-block; width: 100%; text-align: center;">Join Batch</a>
       </div>
 
-      <div class="location-card">
-        <h3>Nitesh Classes — Main Centre</h3>
-        <p style="margin: 1rem 0; color: var(--text-muted);">
-          Main Market Road, Near Gamharia Railway Station, Gamharia, Dist. Seraikela-Kharsawan, Jharkhand — 832108
-        </p>
-        <p style="font-weight: 600;">Timings: Mon – Sat · 7:00 AM – 8:00 PM</p>
-        <p style="margin-top: 0.5rem; color: var(--primary); font-weight: 700;">Call / WhatsApp: +91 98765 43210</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHATBOT WIDGET -->
-  <div class="chat-widget">
-    <button class="chat-btn" onclick="toggleChat()">💬 Chat with Us</button>
-    <div class="chat-box" id="chatBox">
-      <div class="chat-header">
-        <span>Nitesh Classes Assistant</span>
-        <span style="cursor:pointer;" onclick="toggleChat()">✕</span>
-      </div>
-      <div class="chat-logs" id="chatLogs">
-        <div class="chat-msg bot">Hello! 😊 How can I help — fees, batches, subjects, timings, or booking a free demo?</div>
-      </div>
-      <div class="chat-input-area">
-        <input type="text" id="chatInput" placeholder="Ask something..." onkeydown="if(event.key==='Enter') sendChat()">
-        <button onclick="sendChat()">Send</button>
+      <!-- Course 2 -->
+      <div class="course-card">
+        <h3>Class 11th – 12th</h3>
+        <p style="color: var(--accent); font-weight: 600;">Board Mastery</p>
+        <ul>
+          <li><i class="fa-solid fa-circle-check"></i> Mathematics — Calculus & Algebra</li>
+          <li><i class="fa-solid fa-circle-check"></i> Science — PCM / PCB Stream</li>
+          <li><i class="fa-solid fa-circle-check"></i> Board-Pattern Mock Tests</li>
+          <li><i class="fa-solid fa-circle-check"></i> Chapter Revision Marathons</li>
+        </ul>
+        <a href="#admission" class="btn-main" style="display: inline-block; width: 100%; text-align: center;">Join Batch</a>
       </div>
     </div>
   </div>
 
-  <!-- FOOTER -->
+  <!-- Admission Section -->
+  <div class="container" id="admission">
+    <div class="section-title">
+      <h2>ONLINE ADMISSION FORM</h2>
+      <p>Form bharein. Verification ke baad hum aapko confirm karne ke liye call karenge.</p>
+    </div>
+
+    <div class="admission-section">
+      <!-- Web3Forms Form Integration -->
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <!-- Web3Forms Access Key Included -->
+        <input type="hidden" name="access_key" value="1bd4d7e3-38cf-4cc9-af1f-c3429fb81bc6">
+        <input type="hidden" name="subject" value="New Admission Inquiry - Nitesh Classes">
+
+        <div class="form-group">
+          <label>Student's Full Name</label>
+          <input type="text" name="Student_Name" placeholder="Apna naam likhein" required>
+        </div>
+        <div class="form-group">
+          <label>Select Class</label>
+          <select name="Class" required>
+            <option value="">Class choose karein</option>
+            <option>Class 6th to 8th</option>
+            <option>Class 9th & 10th</option>
+            <option>Class 11th & 12th (PCM/PCB)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Mobile Number (WhatsApp)</label>
+          <input type="tel" name="Mobile_Number" placeholder="+91 72949 35568" required>
+        </div>
+        <button type="submit" class="btn-submit">Submit Admission Request</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Location Info -->
+  <div class="container" style="text-align: center; border-top: 1px solid #e2e8f0; padding-top: 40px;">
+    <h3>📍 Visit Our Centre</h3>
+    <p style="color: var(--text-muted); margin-top: 8px;">Chhota Gamharia, Jharkhand</p>
+    <p style="color: var(--text-muted);">Contact: <b>+91 72949 35568</b> | Timings: Mon – Sat · 7:00 AM – 8:00 PM</p>
+  </div>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2026 Nitesh Classes, Gamharia, Jharkhand. All rights reserved.</p>
-    <p style="color: #94a3b8; margin-top: 0.4rem;">Math · Science · Social Studies — Class 6th to 12th</p>
+    <p>© 2026 Nitesh Classes, Chhota Gamharia, Jharkhand. All rights reserved.</p>
+    <p>Math · Science · Social Studies — Class 6th to 12th | Call: +91 72949 35568</p>
   </footer>
 
-  <!-- JAVASCRIPT CODE -->
-  <script>
-    function toggleChat() {
-      const box = document.getElementById('chatBox');
-      box.style.display = box.style.display === 'block' ? 'none' : 'block';
-    }
-
-    function bubble(msg, sender) {
-      const logs = document.getElementById('chatLogs');
-      const div = document.createElement('div');
-      div.className = `chat-msg ${sender}`;
-      div.textContent = msg;
-      logs.appendChild(div);
-      logs.scrollTop = logs.scrollHeight;
-    }
-
-    function botReply(text) {
-      const s = text.toLowerCase();
-      let reply = 'That\'s a good question! For detailed info, call us or visit our center. Ask me about: fees, classes, subjects, timings, or demo class!';
-      
-      if (/(fee|fees|cost|charge)/.test(s)) {
-        reply = 'Our fee structure is very affordable! Please submit the Admission Form above or visit our center for class-wise fee details.';
-      } else if (/(demo|class|book|join|admission)/.test(s)) {
-        reply = 'Great choice! Fill out the Online Admission Form on the website with your details, and we will contact you for admission. 🚀';
-      } else if (/(subject|math|science|social|sst)/.test(s)) {
-        reply = 'We specialize in: Mathematics, Science (Physics, Chemistry, Biology), and Social Studies for Classes 6th to 12th.';
-      } else if (/(where|location|address|gamharia)/.test(s)) {
-        reply = 'We are at Main Market Road, near Gamharia Railway Station, Gamharia, Jharkhand — 832108.';
-      } else if (/(time|timing|hour)/.test(s)) {
-        reply = 'We are open Monday to Saturday, 7:00 AM – 8:00 PM with separate morning and evening batches.';
-      } else if (/(hi|hello|hey)/.test(s)) {
-        reply = 'Hello! 😊 How can I help you today?';
-      }
-
-      setTimeout(() => bubble(reply, 'bot'), 500);
-    }
-
-    function sendChat() {
-      const inp = document.getElementById('chatInput');
-      const v = inp.value.trim();
-      if (!v) return;
-      bubble(v, 'user');
-      inp.value = '';
-      botReply(v);
-    }
-
-    /* COUNTERS ANIMATION */
-    const counterObs = new IntersectionObserver(entries => {
-      entries.forEach(en => {
-        if (!en.isIntersecting) return;
-        const el = en.target;
-        const target = +el.dataset.target;
-        let cur = 0;
-        const step = Math.max(1, Math.ceil(target / 60));
-        const iv = setInterval(() => {
-          cur += step;
-          if (cur >= target) {
-            cur = target;
-            clearInterval(iv);
-          }
-          el.textContent = cur;
-        }, 30);
-        counterObs.unobserve(el);
-      });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
-  </script>
-
-</body>
   <!-- ================= AI CHATBOT CODE START ================= -->
-<style>
-  /* Floating Button Style */
-  .ai-chat-btn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 50px;
-    padding: 14px 22px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: transform 0.2s ease, background 0.2s ease;
-  }
-  .ai-chat-btn:hover {
-    background: #0056b3;
-    transform: scale(1.05);
-  }
+  <style>
+    .ai-chat-btn { position: fixed; bottom: 25px; right: 25px; background: #2563eb; color: #ffffff; border: none; border-radius: 50px; padding: 14px 22px; font-size: 15px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4); z-index: 9999; display: flex; align-items: center; gap: 8px; transition: transform 0.2s ease; }
+    .ai-chat-btn:hover { transform: scale(1.05); }
+    .ai-chat-box { display: none; position: fixed; bottom: 85px; right: 25px; width: 330px; height: 420px; background: #ffffff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); flex-direction: column; overflow: hidden; z-index: 9999; }
+    .ai-chat-header { background: #2563eb; color: #ffffff; padding: 14px 16px; font-weight: bold; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+    .ai-chat-close { cursor: pointer; font-size: 18px; }
+    .ai-chat-body { flex: 1; padding: 12px; overflow-y: auto; font-size: 14px; background: #f8fafc; display: flex; flex-direction: column; gap: 10px; }
+    .msg-bot { background: #e2e8f0; color: #0f172a; padding: 10px 12px; border-radius: 12px 12px 12px 2px; max-width: 85%; word-wrap: break-word; font-size: 0.9rem; }
+    .msg-user { background: #2563eb; color: #ffffff; padding: 10px 12px; border-radius: 12px 12px 2px 12px; align-self: flex-end; max-width: 85%; word-wrap: break-word; font-size: 0.9rem; }
+    .ai-chat-footer { display: flex; border-top: 1px solid #e2e8f0; background: #ffffff; }
+    .ai-chat-footer input { flex: 1; border: none; padding: 12px 14px; outline: none; font-size: 14px; }
+    .ai-chat-footer button { background: #2563eb; color: #ffffff; border: none; padding: 12px 16px; cursor: pointer; font-weight: bold; }
+  </style>
 
-  /* Chat Window Container */
-  .ai-chat-box {
-    display: none;
-    position: fixed;
-    bottom: 85px;
-    right: 25px;
-    width: 330px;
-    height: 420px;
-    background: #ffffff;
-    border-radius: 14px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    flex-direction: column;
-    overflow: hidden;
-    z-index: 9999;
-    font-family: Arial, sans-serif;
-  }
+  <button class="ai-chat-btn" onclick="toggleNiteshChat()">💬 Ask Nitesh AI</button>
 
-  /* Chat Header */
-  .ai-chat-header {
-    background: #007bff;
-    color: #ffffff;
-    padding: 14px 16px;
-    font-weight: bold;
-    font-size: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .ai-chat-close {
-    cursor: pointer;
-    font-size: 18px;
-    line-height: 1;
-    opacity: 0.8;
-  }
-  .ai-chat-close:hover {
-    opacity: 1;
-  }
-
-  /* Chat Message Area */
-  .ai-chat-body {
-    flex: 1;
-    padding: 12px;
-    overflow-y: auto;
-    font-size: 14px;
-    background: #f8f9fa;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .msg-bot {
-    background: #e9ecef;
-    color: #212529;
-    padding: 10px 12px;
-    border-radius: 12px 12px 12px 2px;
-    max-width: 82%;
-    word-wrap: break-word;
-    line-height: 1.4;
-  }
-  .msg-user {
-    background: #007bff;
-    color: #ffffff;
-    padding: 10px 12px;
-    border-radius: 12px 12px 2px 12px;
-    align-self: flex-end;
-    max-width: 82%;
-    word-wrap: break-word;
-    line-height: 1.4;
-  }
-
-  /* Chat Input Area */
-  .ai-chat-footer {
-    display: flex;
-    border-top: 1px solid #dee2e6;
-    background: #ffffff;
-  }
-  .ai-chat-footer input {
-    flex: 1;
-    border: none;
-    padding: 12px 14px;
-    outline: none;
-    font-size: 14px;
-  }
-  .ai-chat-footer button {
-    background: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 12px 16px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 14px;
-  }
-  .ai-chat-footer button:hover {
-    background: #0056b3;
-  }
-</style>
-
-<!-- Floating Toggle Button -->
-<button class="ai-chat-btn" onclick="toggleNiteshChat()">
-  💬 Ask Nitesh AI
-</button>
-
-<!-- Chat Window -->
-<div class="ai-chat-box" id="niteshChatWindow">
-  <div class="ai-chat-header">
-    <span>🤖 Nitesh Classes Assistant</span>
-    <span class="ai-chat-close" onclick="toggleNiteshChat()">✖</span>
-  </div>
-  
-  <div class="ai-chat-body" id="niteshChatMessages">
-    <div class="msg-bot">
-      Namaste! Nitesh Classes Gamharia me aapka swagat hai. Main aapki kya madad kar sakta hoon?
+  <div class="ai-chat-box" id="niteshChatWindow">
+    <div class="ai-chat-header">
+      <span>🤖 Nitesh Classes Assistant</span>
+      <span class="ai-chat-close" onclick="toggleNiteshChat()">✖</span>
+    </div>
+    <div class="ai-chat-body" id="niteshChatMessages">
+      <div class="msg-bot">Namaste! Nitesh Classes Chhota Gamharia me aapka swagat hai. Main aapki kya madad kar sakta hoon?</div>
+    </div>
+    <div class="ai-chat-footer">
+      <input type="text" id="niteshUserInput" placeholder="Fees, timing ya subjects..." onkeypress="handleNiteshKeyPress(event)">
+      <button onclick="sendNiteshMessage()">Send</button>
     </div>
   </div>
-  
-  <div class="ai-chat-footer">
-    <input 
-      type="text" 
-      id="niteshUserInput" 
-      placeholder="Fees, timing ya subjects poochhein..." 
-      onkeypress="handleNiteshKeyPress(event)"
-    >
-    <button onclick="sendNiteshMessage()">Send</button>
-  </div>
-</div>
 
-<script>
-  function toggleNiteshChat() {
-    var chatWindow = document.getElementById('niteshChatWindow');
-    if (chatWindow.style.display === 'flex') {
-      chatWindow.style.display = 'none';
-    } else {
-      chatWindow.style.display = 'flex';
-      document.getElementById('niteshUserInput').focus();
+  <script>
+    function toggleNiteshChat() {
+      var w = document.getElementById('niteshChatWindow');
+      w.style.display = (w.style.display === 'flex') ? 'none' : 'flex';
+      if(w.style.display === 'flex') document.getElementById('niteshUserInput').focus();
     }
-  }
-
-  function handleNiteshKeyPress(e) {
-    if (e.key === 'Enter') {
-      sendNiteshMessage();
+    function handleNiteshKeyPress(e) { if (e.key === 'Enter') sendNiteshMessage(); }
+    function sendNiteshMessage() {
+      var input = document.getElementById('niteshUserInput');
+      var text = input.value.trim();
+      if (!text) return;
+      var body = document.getElementById('niteshChatMessages');
+      body.innerHTML += '<div class="msg-user">' + text + '</div>';
+      input.value = '';
+      body.scrollTop = body.scrollHeight;
+      setTimeout(function() {
+        var reply = generateNiteshReply(text.toLowerCase());
+        body.innerHTML += '<div class="msg-bot">' + reply + '</div>';
+        body.scrollTop = body.scrollHeight;
+      }, 400);
     }
-  }
-
-  function sendNiteshMessage() {
-    var inputField = document.getElementById('niteshUserInput');
-    var text = inputField.value.trim();
-    if (!text) return;
-
-    var chatBody = document.getElementById('niteshChatMessages');
-    
-    // User message display
-    chatBody.innerHTML += '<div class="msg-user">' + escapeHTML(text) + '</div>';
-    inputField.value = '';
-    chatBody.scrollTop = chatBody.scrollHeight;
-
-    // AI Reply logic (Automated response)
-    setTimeout(function() {
-      var botReply = generateNiteshReply(text.toLowerCase());
-      chatBody.innerHTML += '<div class="msg-bot">' + botReply + '</div>';
-      chatBody.scrollTop = chatBody.scrollHeight;
-    }, 400);
-  }
-
-  function generateNiteshReply(query) {
-    if (query.includes("fee") || query.includes("fe") || query.includes("paisa") || query.includes("charge")) {
-      return "Class 6th-10th aur 11th-12th ki fees batch ke hisab se hai. Sahi details ke liye online Admission Form bharein ya Call/WhatsApp karein: <b>+91 72949 35568</b>.";
+    function generateNiteshReply(q) {
+      if (q.includes("fee") || q.includes("paisa")) return "Class 6th-10th & 11th-12th ki fees batches ke anusar hai. Online form bharein ya call karein: +91 72949 35568.";
+      if (q.includes("time") || q.includes("batch")) return "Classes Mon-Sat subah <b>7:00 AM se shaam 8:00 PM</b> tak chalti hain.";
+      if (q.includes("kahan") || q.includes("address") || q.includes("location")) return "Humara centre <b>Chhota Gamharia, Jharkhand</b> me hai. Call: +91 72949 35568";
+      if (q.includes("number") || q.includes("contact") || q.includes("phone") || q.includes("call")) return "Aap hume is number par call ya WhatsApp kar sakte hain: <b>+91 72949 35568</b>";
+      if (q.includes("subject") || q.includes("class")) return "Hum Class 6th-10th (Maths, Science, SST) aur Class 11th-12th (PCM/PCB) padhate hain.";
+      return "Kripya online Admission Form bharein ya Chhota Gamharia centre par visit karein. Call: +91 72949 35568";
     }
-    if (query.includes("time") || query.includes("timing") || query.includes("batch") || query.includes("kab")) {
-      return "Humari classes Mon-Sat  <b>4:00 PM se shaam 8:00 PM</b> tak chalti hain.";
-    }
-    if (query.includes("where") || query.includes("kahan") || query.includes("address") || query.includes("location") || query.includes("place")) {
-      return "Humara centre <b>Main Market Road, Near Gamharia Railway Station, Gamharia</b> par hai.";
-    }
-    if (query.includes("subject") || query.includes("class") || query.includes("course") || query.includes("padhai")) {
-      return "Hum Class 6th-10th ko <b>Maths, Science & SST</b> padhate hain aur Class 11th-12th ko <b>PCM / PCB (JAC & CBSE)</b> ki taiyari karwate hain.";
-    }
-    if (query.includes("hi") || query.includes("hello") || query.includes("namaste") || query.includes("hey")) {
-      return "Namaste! Batayein, Nitesh Classes ke baare me aapko kya jaankari chahiye?";
-    }
-    
-    return "Aapki query ke liye aap humse direct Contact / WhatsApp kar sakte hain: <b>+91 98765 43210</b> ya niche diya gaya Form bharein.";
-  }
+  </script>
+  <!-- ================= AI CHATBOT CODE END ================= -->
 
-  function escapeHTML(str) {
-    return str.replace(/[&<>'"]/g, 
-      tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
-    );
-  }
-</script>
-<!-- ================= AI CHATBOT CODE END ================= -->
-
+</body>
 </html>
