@@ -1,718 +1,330 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nitesh Classes — Gamharia, Jharkhand | Class 6–12 Coaching</title>
-<meta name="description" content="Nitesh Classes, Gamharia Jharkhand — Expert coaching for Class 6th to 12th in Math, Science & Social Studies. Book a free demo class today.">
-
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    darkMode: 'class',
-    theme: {
-      extend: {
-        fontFamily: {
-          display: ['Orbitron', 'sans-serif'],
-          body: ['Inter', 'sans-serif'],
-        },
-        colors: {
-          neon: { cyan: '#00f0ff', blue: '#3b82f6', deep: '#0a0e1a' }
-        },
-        animation: {
-          'float': 'float 6s ease-in-out infinite',
-          'float-slow': 'float 8s ease-in-out infinite',
-          'glow-pulse': 'glowPulse 2.5s ease-in-out infinite',
-          'spin-slow': 'spin 12s linear infinite',
-        },
-        keyframes: {
-          float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-16px)' } },
-          glowPulse: { '0%,100%': { opacity: '1' }, '50%': { opacity: '.55' } }
-        }
-      }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nitesh Classes — Gamharia, Jharkhand</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --bg-dark: #0f172a;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --card-bg: #ffffff;
     }
-  }
-</script>
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+    body { background-color: #f8fafc; color: var(--text-main); line-height: 1.6; }
 
-<!-- FontAwesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    /* Navigation */
+    nav { background: #ffffff; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 100; padding: 1rem 2rem; }
+    .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .brand { text-decoration: none; color: var(--text-main); font-weight: 800; font-size: 1.25rem; }
+    .brand p { font-size: 0.8rem; color: var(--text-muted); font-weight: normal; }
+    .nav-links a { text-decoration: none; color: #334155; margin-left: 1.5rem; font-weight: 500; font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--primary); }
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    /* Hero Section */
+    .hero { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; text-align: center; }
+    .badge { background: #dbeafe; color: #1e40af; padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; display: inline-block; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: 2.8rem; font-weight: 900; line-height: 1.2; letter-spacing: -1px; margin-bottom: 1.5rem; color: #0f172a; }
+    .hero h1 span { color: var(--primary); }
+    .hero p { font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 2rem auto; }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
+    .btn { text-decoration: none; padding: 0.8rem 1.8rem; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: all 0.2s; }
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-secondary { background: #e2e8f0; color: #1e293b; }
+    
+    /* Stats */
+    .stats { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem; border-top: 1px solid #e2e8f0; padding-top: 2rem; }
+    .stat-box { text-align: center; }
+    .stat-box span { font-size: 2.2rem; font-weight: 800; color: var(--primary); }
+    .stat-box p { font-size: 0.9rem; color: var(--text-muted); font-weight: 500; }
 
-<style>
-  :root { --neon-cyan: #00f0ff; --neon-blue: #3b82f6; }
-  body { font-family: 'Inter', sans-serif; }
+    /* Common Sections */
+    section { padding: 4rem 1.5rem; }
+    .section-container { max-width: 1100px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-header p { color: var(--primary); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+    .section-header h2 { font-size: 2rem; font-weight: 800; margin-top: 0.5rem; }
 
-  /* ---------- Futuristic backdrop grid ---------- */
-  .tech-grid {
-    background-image:
-      linear-gradient(rgba(0,240,255,.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,240,255,.05) 1px, transparent 1px);
-    background-size: 42px 42px;
-  }
-  .dark .tech-grid {
-    background-image:
-      linear-gradient(rgba(0,240,255,.07) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,240,255,.07) 1px, transparent 1px);
-  }
+    /* Courses Grid */
+    .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .course-card { background: white; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+    .course-card h3 { font-size: 1.4rem; margin-bottom: 0.8rem; color: #0f172a; }
+    .course-card ul { list-style: none; margin-top: 1rem; }
+    .course-card li { margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-muted); }
 
-  /* ---------- Glow text ---------- */
-  .glow-text {
-    text-shadow: 0 0 18px rgba(0,240,255,.55), 0 0 42px rgba(59,130,246,.35);
-  }
+    /* Form Section */
+    .form-section { background: #ffffff; padding: 2.5rem; border-radius: 16px; border: 1px solid #e2e8f0; max-width: 600px; margin: 0 auto; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 0.4rem; font-size: 0.9rem; color: #334155; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.8rem; border: 1px solid #cbd5e0; border-radius: 8px; font-size: 0.95rem; outline: none; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary); }
+    .btn-submit { width: 100%; background: var(--primary); color: white; border: none; padding: 0.9rem; font-size: 1rem; font-weight: 700; border-radius: 8px; cursor: pointer; transition: background 0.2s; }
+    .btn-submit:hover { background: var(--primary-hover); }
 
-  /* ---------- Glass card ---------- */
-  .glass {
-    background: rgba(255,255,255,.72);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(59,130,246,.18);
-  }
-  .dark .glass {
-    background: rgba(13,20,38,.62);
-    border: 1px solid rgba(0,240,255,.16);
-  }
+    /* Location & Footer */
+    .location-card { background: #ffffff; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0; max-width: 700px; margin: 0 auto; text-align: center; }
+    footer { background: #0f172a; color: white; text-align: center; padding: 2rem 1.5rem; margin-top: 4rem; font-size: 0.9rem; }
 
-  /* ---------- Neon border sweep ---------- */
-  .neon-card { position: relative; overflow: hidden; transition: transform .35s ease, box-shadow .35s ease; }
-  .neon-card::before {
-    content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px;
-    background: linear-gradient(135deg, rgba(0,240,255,.7), transparent 40%, transparent 60%, rgba(59,130,246,.7));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor; mask-composite: exclude;
-    pointer-events: none;
-  }
-  .neon-card:hover { transform: translateY(-8px); box-shadow: 0 18px 45px -12px rgba(0,240,255,.35); }
-
-  /* ---------- Buttons ---------- */
-  .btn-primary {
-    background: linear-gradient(90deg, #00c6ff, #0072ff);
-    box-shadow: 0 0 22px rgba(0,198,255,.45), inset 0 1px 0 rgba(255,255,255,.25);
-    transition: all .3s ease;
-  }
-  .btn-primary:hover { box-shadow: 0 0 36px rgba(0,198,255,.75); transform: translateY(-2px); }
-
-  /* ---------- Custom toggle switch ---------- */
-  .switch { position: relative; width: 52px; height: 28px; display: inline-block; }
-  .switch input { opacity: 0; width: 0; height: 0; }
-  .slider-tg {
-    position: absolute; inset: 0; cursor: pointer; border-radius: 999px;
-    background: #94a3b8; transition: .3s;
-  }
-  .slider-tg::before {
-    content: ''; position: absolute; width: 22px; height: 22px; border-radius: 50%;
-    left: 3px; top: 3px; background: #fff; transition: .3s;
-    box-shadow: 0 2px 6px rgba(0,0,0,.3);
-  }
-  .switch input:checked + .slider-tg { background: linear-gradient(90deg,#00c6ff,#0072ff); box-shadow: 0 0 12px rgba(0,198,255,.5); }
-  .switch input:checked + .slider-tg::before { transform: translateX(24px); }
-
-  /* ---------- Chat widget ---------- */
-  #chatPanel { transform: scale(.85) translateY(20px); opacity: 0; pointer-events: none; transition: all .28s cubic-bezier(.34,1.56,.64,1); transform-origin: bottom right; }
-  #chatPanel.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: auto; }
-  .chat-bubble-bot { background: linear-gradient(135deg, rgba(0,198,255,.16), rgba(0,114,255,.10)); border: 1px solid rgba(0,240,255,.25); }
-  .chat-bubble-user { background: linear-gradient(90deg, #00c6ff, #0072ff); }
-
-  /* ---------- Typing dots ---------- */
-  .typing span { display: inline-block; width: 6px; height: 6px; margin: 0 1.5px; border-radius: 50%; background: #00f0ff; animation: blink 1.2s infinite; }
-  .typing span:nth-child(2) { animation-delay: .2s; }
-  .typing span:nth-child(3) { animation-delay: .4s; }
-  @keyframes blink { 0%,80%,100% { opacity: .25; } 40% { opacity: 1; } }
-
-  /* ---------- Modal ---------- */
-  #demoModal { transition: opacity .25s ease; }
-  #demoModal.hidden-modal { opacity: 0; pointer-events: none; }
-  #demoModal .modal-box { transform: translateY(24px) scale(.96); transition: transform .28s cubic-bezier(.34,1.4,.64,1); }
-  #demoModal:not(.hidden-modal) .modal-box { transform: translateY(0) scale(1); }
-
-  /* ---------- Toast ---------- */
-  #toast { transition: all .35s cubic-bezier(.34,1.4,.64,1); transform: translateY(80px); opacity: 0; }
-  #toast.show { transform: translateY(0); opacity: 1; }
-
-  /* ---------- Orb decorations ---------- */
-  .orb { position: absolute; border-radius: 50%; filter: blur(70px); pointer-events: none; }
-
-  /* ---------- Scrollbar ---------- */
-  ::-webkit-scrollbar { width: 8px; }
-  ::-webkit-scrollbar-track { background: transparent; }
-  ::-webkit-scrollbar-thumb { background: linear-gradient(#00c6ff,#0072ff); border-radius: 8px; }
-
-  /* ---------- Nav link hover ---------- */
-  .nav-link { position: relative; }
-  .nav-link::after { content:''; position:absolute; left:0; bottom:-4px; width:0; height:2px; background:linear-gradient(90deg,#00f0ff,#3b82f6); transition:width .3s ease; border-radius:2px; }
-  .nav-link:hover::after { width:100%; }
-
-  /* ---------- Counter ---------- */
-  .stat-card { transition: transform .3s ease; }
-  .stat-card:hover { transform: translateY(-6px); }
-</style>
+    /* Chatbot Floating Styles */
+    .chat-widget { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
+    .chat-btn { background: var(--primary); color: white; border: none; padding: 12px 20px; border-radius: 50px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+    .chat-box { display: none; position: fixed; bottom: 80px; right: 20px; width: 320px; background: white; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); border: 1px solid #e2e8f0; overflow: hidden; }
+    .chat-header { background: var(--primary); color: white; padding: 12px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+    .chat-logs { height: 250px; padding: 10px; overflow-y: auto; font-size: 0.85rem; }
+    .chat-msg { margin-bottom: 8px; padding: 8px 12px; border-radius: 8px; max-width: 80%; }
+    .chat-msg.user { background: #dbeafe; margin-left: auto; color: #1e40af; }
+    .chat-msg.bot { background: #f1f5f9; color: #334155; }
+    .chat-input-area { display: flex; border-top: 1px solid #e2e8f0; }
+    .chat-input-area input { flex: 1; border: none; padding: 10px; outline: none; font-size: 0.85rem; }
+    .chat-input-area button { background: var(--primary); color: white; border: none; padding: 10px 15px; cursor: pointer; }
+  </style>
 </head>
+<body>
 
-<body class="font-body bg-slate-100 dark:bg-neon-deep text-slate-800 dark:text-slate-200 transition-colors duration-500 overflow-x-hidden">
-
-<!-- ===================== NAVBAR ===================== -->
-<nav class="fixed top-0 left-0 right-0 z-50 glass shadow-lg shadow-blue-500/5">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
-      <a href="#home" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/40 group-hover:shadow-cyan-400/60 transition-shadow">
-          <i class="fa-solid fa-graduation-cap text-white text-lg"></i>
-        </div>
-        <div>
-          <span class="font-display font-800 text-lg tracking-wide bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-extrabold">NITESH CLASSES</span>
-          <p class="text-[10px] uppercase tracking-[.25em] text-slate-500 dark:text-cyan-300/60 -mt-0.5">Gamharia · Jharkhand</p>
-        </div>
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-container">
+      <a href="#home" class="brand">
+        NITESH CLASSES
+        <p>Gamharia · Jharkhand</p>
       </a>
-
-      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="#home" class="nav-link hover:text-cyan-500 dark:hover:text-cyan-300 transition-colors">Home</a>
-        <a href="#courses" class="nav-link hover:text-cyan-500 dark:hover:text-cyan-300 transition-colors">Courses</a>
-        <a href="#settings" class="nav-link hover:text-cyan-500 dark:hover:text-cyan-300 transition-colors">Settings</a>
-        <a href="#location" class="nav-link hover:text-cyan-500 dark:hover:text-cyan-300 transition-colors">Location</a>
-        <button onclick="toggleTheme()" class="w-9 h-9 rounded-full glass flex items-center justify-center hover:scale-110 transition-transform" title="Toggle theme">
-          <i id="themeIcon" class="fa-solid fa-moon text-cyan-500 dark:text-yellow-300"></i>
-        </button>
-        <button onclick="openModal()" class="btn-primary text-white text-xs font-semibold px-5 py-2.5 rounded-full tracking-wide">
-          <i class="fa-solid fa-bolt mr-1"></i> FREE DEMO
-        </button>
-      </div>
-
-      <!-- Mobile hamburger -->
-      <div class="md:hidden flex items-center gap-3">
-        <button onclick="toggleTheme()" class="w-9 h-9 rounded-full glass flex items-center justify-center">
-          <i id="themeIconMobile" class="fa-solid fa-moon text-cyan-500 dark:text-yellow-300"></i>
-        </button>
-        <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="w-9 h-9 rounded-full glass flex items-center justify-center">
-          <i class="fa-solid fa-bars text-cyan-500 dark:text-cyan-300"></i>
-        </button>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#admission">Admission</a>
+        <a href="#location">Location</a>
       </div>
     </div>
-  </div>
+  </nav>
 
-  <!-- Mobile menu -->
-  <div id="mobileMenu" class="hidden md:hidden glass border-t border-blue-500/10">
-    <div class="px-6 py-4 flex flex-col gap-3 text-sm font-medium">
-      <a href="#home" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="py-2 hover:text-cyan-400">Home</a>
-      <a href="#courses" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="py-2 hover:text-cyan-400">Courses</a>
-      <a href="#settings" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="py-2 hover:text-cyan-400">Settings</a>
-      <a href="#location" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="py-2 hover:text-cyan-400">Location</a>
-      <button onclick="openModal()" class="btn-primary text-white text-xs font-semibold px-5 py-2.5 rounded-full mt-1">BOOK FREE DEMO</button>
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="badge">Admissions Open · Session 2026–27</div>
+    <h1>FUTURE-READY<br><span>LEARNING STARTS HERE.</span></h1>
+    <p><strong>Nitesh Classes</strong>, Gamharia — Jharkhand's trusted coaching institute for <strong>Class 6th to 12th</strong>. Master Math, Science & Social Studies with concept-first teaching and personal mentoring.</p>
+    
+    <div class="cta-buttons">
+      <a href="#courses" class="btn btn-secondary">Explore Courses</a>
+      <a href="#admission" class="btn btn-primary">Book Free Demo Class</a>
     </div>
-  </div>
-</nav>
 
-<!-- ===================== HERO / HOME ===================== -->
-<section id="home" class="relative min-h-screen flex items-center tech-grid pt-24 pb-16">
-  <div class="orb w-[420px] h-[420px] bg-cyan-500/20 -top-24 -left-24"></div>
-  <div class="orb w-[380px] h-[380px] bg-blue-600/20 bottom-0 -right-24"></div>
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat-box">
+        <span class="counter" data-target="500">0</span><span>+</span>
+        <p>Students Taught</p>
+      </div>
+      <div class="stat-box">
+        <span class="counter" data-target="95">0</span><span>%</span>
+        <p>Board Success</p>
+      </div>
+      <div class="stat-box">
+        <span class="counter" data-target="3">0</span>
+        <p>Core Subjects</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center relative z-10 w-full">
-    <!-- Left copy -->
-    <div class="text-center lg:text-left">
-      <div class="inline-flex items-center gap-2 glass px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase text-cyan-600 dark:text-cyan-300 mb-6 animate-float">
-        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-glow-pulse"></span>
-        Admissions Open · Session 2026–27
+  <!-- COURSES SECTION -->
+  <section id="courses" style="background: #f1f5f9;">
+    <div class="section-container">
+      <div class="section-header">
+        <p>// Our Programs</p>
+        <h2>COURSES & BATCHES</h2>
       </div>
 
-      <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-6xl leading-tight">
-        <span class="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent glow-text">FUTURE-READY</span><br>
-        <span class="text-slate-900 dark:text-white">LEARNING STARTS</span><br>
-        <span class="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">HERE.</span>
-      </h1>
-
-      <p class="mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-        <strong class="text-slate-900 dark:text-white">Nitesh Classes</strong>, Gamharia — Jharkhand's trusted coaching institute for
-        <strong class="text-cyan-600 dark:text-cyan-300">Class 6th to 12th</strong>. Master
-        <span class="font-semibold">Math, Science & Social Studies</span> with concept-first teaching, small batches and personal mentoring.
-      </p>
-
-      <!-- CTA -->
-      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-        <button onclick="openModal()" class="btn-primary text-white font-semibold px-8 py-4 rounded-full tracking-wide">
-          <i class="fa-solid fa-rocket mr-2"></i> Book Free Demo Class
-        </button>
-        <a href="#courses" class="glass px-8 py-4 rounded-full font-semibold text-center hover:border-cyan-400/50 transition-colors">
-          <i class="fa-solid fa-layer-group mr-2 text-cyan-500 dark:text-cyan-300"></i> Explore Courses
-        </a>
-      </div>
-
-      <!-- Quick stats -->
-      <div class="mt-12 grid grid-cols-3 gap-3 sm:gap-5 max-w-lg mx-auto lg:mx-0">
-        <div class="stat-card glass rounded-2xl p-4 text-center">
-          <div class="font-display text-2xl sm:text-3xl font-extrabold text-cyan-500 dark:text-cyan-300"><span class="counter" data-target="500">0</span>+</div>
-          <p class="text-[11px] sm:text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 mt-1">Students Taught</p>
+      <div class="courses-grid">
+        <div class="course-card">
+          <h3>Class 6th – 10th</h3>
+          <p><strong>Foundation Track</strong> — Build rock-solid fundamentals in core subjects.</p>
+          <ul>
+            <li>✓ Mathematics — NCERT + Mental Math</li>
+            <li>✓ Science — Physics, Chemistry, Biology</li>
+            <li>✓ Social Studies — History, Civics, Geography</li>
+            <li>✓ Weekly tests & parent reports</li>
+          </ul>
         </div>
-        <div class="stat-card glass rounded-2xl p-4 text-center">
-          <div class="font-display text-2xl sm:text-3xl font-extrabold text-cyan-500 dark:text-cyan-300"><span class="counter" data-target="95">0</span>%</div>
-          <p class="text-[11px] sm:text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 mt-1">Board Success</p>
-        </div>
-        <div class="stat-card glass rounded-2xl p-4 text-center">
-          <div class="font-display text-2xl sm:text-3xl font-extrabold text-cyan-500 dark:text-cyan-300"><span class="counter" data-target="3">0</span></div>
-          <p class="text-[11px] sm:text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 mt-1">Core Subjects</p>
+
+        <div class="course-card">
+          <h3>Class 11th – 12th</h3>
+          <p><strong>Board Mastery</strong> — Intensive JAC / CBSE board examination preparation.</p>
+          <ul>
+            <li>✓ Mathematics — Calculus, Algebra & Statistics</li>
+            <li>✓ Science — PCM / PCB core stream guidance</li>
+            <li>✓ Board-pattern mock tests</li>
+            <li>✓ Revision marathons & paper solving</li>
+          </ul>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Right visual -->
-    <div class="hidden lg:flex justify-center relative">
-      <div class="relative animate-float-slow">
-        <div class="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400/30 to-blue-600/30 blur-3xl scale-110"></div>
-        <div class="relative w-[380px] h-[380px] rounded-full glass flex items-center justify-center shadow-2xl shadow-cyan-500/20">
-          <div class="absolute inset-4 rounded-full border border-dashed border-cyan-400/40 animate-spin-slow"></div>
-          <div class="text-center">
-            <i class="fa-solid fa-atom text-7xl bg-gradient-to-br from-cyan-300 to-blue-500 bg-clip-text text-transparent mb-4"></i>
-            <p class="font-display font-bold text-xl text-slate-900 dark:text-white">Concept.<br>Practice.<br><span class="text-cyan-400 glow-text">Excel.</span></p>
+  <!-- AUTOMATIC NOTIFICATION ADMISSION FORM -->
+  <section id="admission">
+    <div class="section-container">
+      <div class="section-header">
+        <p>// Direct Admission</p>
+        <h2>ONLINE ENQUIRY FORM</h2>
+      </div>
+
+      <div class="form-section">
+        <form action="https://api.web3forms.com/submit" method="POST">
+          
+          <!-- ACCESS KEY ADDED HERE -->
+          <input type="hidden" name="access_key" value="1bd4d7e3-38cf-4cc9-af1f-c3429fb81bc6">
+          <input type="hidden" name="subject" value="New Admission Enquiry - Nitesh Classes">
+
+          <div class="form-group">
+            <label>Student Full Name</label>
+            <input type="text" name="Student Name" placeholder="Student ka naam likhein" required>
           </div>
-        </div>
-        <!-- Floating chips -->
-        <div class="absolute -top-3 -left-8 glass px-4 py-2 rounded-xl text-xs font-semibold animate-float shadow-lg"><i class="fa-solid fa-square-root-variable text-cyan-400 mr-1"></i> Math</div>
-        <div class="absolute top-1/2 -right-12 glass px-4 py-2 rounded-xl text-xs font-semibold animate-float shadow-lg" style="animation-delay:1.2s"><i class="fa-solid fa-flask text-blue-400 mr-1"></i> Science</div>
-        <div class="absolute -bottom-2 left-4 glass px-4 py-2 rounded-xl text-xs font-semibold animate-float shadow-lg" style="animation-delay:2s"><i class="fa-solid fa-globe text-purple-400 mr-1"></i> Social Studies</div>
-      </div>
-    </div>
-  </div>
 
-  <a href="#courses" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-cyan-500 dark:text-cyan-300 animate-bounce"><i class="fa-solid fa-chevron-down text-xl"></i></a>
-</section>
-
-<!-- ===================== COURSES ===================== -->
-<section id="courses" class="relative py-24 tech-grid">
-  <div class="orb w-[350px] h-[350px] bg-blue-600/15 top-10 -right-24"></div>
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center mb-14">
-      <p class="text-xs font-bold tracking-[.3em] uppercase text-cyan-500 dark:text-cyan-300 mb-2">// Our Programs</p>
-      <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">COURSES & <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">BATCHES</span></h2>
-      <p class="mt-3 text-slate-600 dark:text-slate-400 max-w-xl mx-auto">Structured batches from foundation to board mastery — small groups, doubt-clearing sessions, and weekly tests.</p>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-8">
-      <!-- Foundation card -->
-      <div class="neon-card glass rounded-3xl p-8">
-        <div class="flex items-start justify-between mb-6">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/40">
-            <i class="fa-solid fa-seedling text-white text-2xl"></i>
+          <div class="form-group">
+            <label>Mobile / WhatsApp Number</label>
+            <input type="tel" name="Mobile Number" placeholder="10-digit phone number" required>
           </div>
-          <span class="text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-300 border border-cyan-400/30">Foundation Track</span>
-        </div>
-        <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white">Class 6th – 10th</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Build rock-solid fundamentals in Math, Science & Social Studies. NCERT-aligned teaching with activity-based learning and regular parent updates.</p>
-        <ul class="mt-6 space-y-3 text-sm">
-          <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-cyan-500 dark:text-cyan-300"></i> Mathematics — full NCERT + mental math drills</li>
-          <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-cyan-500 dark:text-cyan-300"></i> Science — Physics, Chemistry, Biology concepts</li>
-          <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-cyan-500 dark:text-cyan-300"></i> Social Studies — History, Geography, Civics, Economics</li>
-          <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-cyan-500 dark:text-cyan-300"></i> Weekly tests & monthly performance reports</li>
-        </ul>
-        <button onclick="openModal()" class="mt-8 w-full btn-primary text-white font-semibold py-3.5 rounded-2xl"><i class="fa-solid fa-bolt mr-2"></i> Book Free Demo</button>
-      </div>
 
-      <!-- Board card -->
-      <div class="neon-card glass rounded-3xl p-8">
-        <div class="flex items-start justify-between mb-6">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center shadow-lg shadow-purple-500/40">
-            <i class="fa-solid fa-trophy text-white text-2xl"></i>
-          </div>
-          <span class="text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-300 border border-purple-400/30">Board Mastery</span>
-        </div>
-        <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white">Class 11th – 12th</h3>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Intensive JAC / CBSE board preparation with answer-writing practice, previous-year paper solving and one-on-one mentoring for toppers.</p>
-        <ul class="mt-6 space-y-3 text-sm">
-          <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-purple-500 dark:text-purple-300"></i> Mathematics — Calculus, Algebra, Probability & more</li>
-          <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-purple-500 dark:text-purple-300"></i> Science — PCM / PCB streams, practical support</li>
-          <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-purple-500 dark:text-purple-300"></i> Social Studies — Political Science, Sociology, History</li>
-          <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-purple-500 dark:text-purple-300"></i> Board-pattern mock tests & revision marathons</li>
-        </ul>
-        <button onclick="openModal()" class="mt-8 w-full btn-primary text-white font-semibold py-3.5 rounded-2xl"><i class="fa-solid fa-bolt mr-2"></i> Book Free Demo</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== SETTINGS ===================== -->
-<section id="settings" class="relative py-24">
-  <div class="orb w-[320px] h-[320px] bg-cyan-500/15 bottom-0 -left-24"></div>
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center mb-12">
-      <p class="text-xs font-bold tracking-[.3em] uppercase text-cyan-500 dark:text-cyan-300 mb-2">// Control Panel</p>
-      <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">SETTINGS <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">CONSOLE</span></h2>
-      <p class="mt-3 text-slate-600 dark:text-slate-400">Customize your portal experience — theme, profile and alerts.</p>
-    </div>
-
-    <div class="glass rounded-3xl p-6 sm:p-10 space-y-10">
-
-      <!-- Theme switcher -->
-      <div>
-        <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-palette text-cyan-400"></i> UI Theme</h3>
-        <div class="grid grid-cols-3 gap-3">
-          <button onclick="setTheme('light')" class="theme-opt glass rounded-2xl p-4 text-center border-2 border-transparent hover:border-cyan-400/50 transition-all">
-            <i class="fa-solid fa-sun text-yellow-500 text-xl mb-2"></i>
-            <p class="text-xs font-semibold">Light Mode</p>
-          </button>
-          <button onclick="setTheme('dark')" class="theme-opt glass rounded-2xl p-4 text-center border-2 border-transparent hover:border-cyan-400/50 transition-all">
-            <i class="fa-solid fa-moon text-blue-400 text-xl mb-2"></i>
-            <p class="text-xs font-semibold">Dark Mode</p>
-          </button>
-          <button onclick="setTheme('auto')" class="theme-opt glass rounded-2xl p-4 text-center border-2 border-transparent hover:border-cyan-400/50 transition-all">
-            <i class="fa-solid fa-circle-half-stroke text-purple-400 text-xl mb-2"></i>
-            <p class="text-xs font-semibold">Auto (System)</p>
-          </button>
-        </div>
-      </div>
-
-      <!-- Profile preferences -->
-      <div>
-        <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-user-gear text-cyan-400"></i> Profile Preferences</h3>
-        <div class="grid sm:grid-cols-2 gap-4">
-          <div>
-            <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Student Name</label>
-            <input id="prefName" type="text" placeholder="e.g. Aditya Kumar" class="mt-2 w-full glass rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 ring-cyan-400/60 bg-transparent">
-          </div>
-          <div>
-            <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Your Class</label>
-            <select id="prefClass" class="mt-2 w-full glass rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 ring-cyan-400/60 bg-transparent dark:bg-slate-900/40">
-              <option value="">Select class</option>
-              <option>Class 6</option><option>Class 7</option><option>Class 8</option>
-              <option>Class 9</option><option>Class 10</option><option>Class 11</option><option>Class 12</option>
+          <div class="form-group">
+            <label>Select Class</label>
+            <select name="Class" required>
+              <option value="">-- Class Select Karein --</option>
+              <option value="Class 6th">Class 6th</option>
+              <option value="Class 7th">Class 7th</option>
+              <option value="Class 8th">Class 8th</option>
+              <option value="Class 9th">Class 9th</option>
+              <option value="Class 10th">Class 10th</option>
+              <option value="Class 11th">Class 11th</option>
+              <option value="Class 12th">Class 12th</option>
             </select>
           </div>
-        </div>
-        <button onclick="savePrefs()" class="mt-4 btn-primary text-white text-sm font-semibold px-6 py-2.5 rounded-full"><i class="fa-solid fa-save mr-2"></i> Save Preferences</button>
-      </div>
 
-      <!-- Notifications -->
-      <div>
-        <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white mb-4 flex items-center gap-2"><i class="fa-solid fa-bell text-cyan-400"></i> Notifications</h3>
-        <div class="space-y-4">
-          <div class="flex items-center justify-between glass rounded-2xl px-5 py-4">
-            <div><p class="text-sm font-semibold">Class Reminders</p><p class="text-xs text-slate-500 dark:text-slate-400">Get notified 30 min before each session</p></div>
-            <label class="switch"><input type="checkbox" checked onchange="toast('Class reminders updated')"><span class="slider-tg"></span></label>
+          <div class="form-group">
+            <label>Subjects / Additional Details</label>
+            <textarea name="Message" rows="3" placeholder="Kaunse subjects padhna chahte hain ya koi question ho..."></textarea>
           </div>
-          <div class="flex items-center justify-between glass rounded-2xl px-5 py-4">
-            <div><p class="text-sm font-semibold">Test & Result Alerts</p><p class="text-xs text-slate-500 dark:text-slate-400">Weekly test scores sent to parents on WhatsApp</p></div>
-            <label class="switch"><input type="checkbox" checked onchange="toast('Test alerts updated')"><span class="slider-tg"></span></label>
-          </div>
-          <div class="flex items-center justify-between glass rounded-2xl px-5 py-4">
-            <div><p class="text-sm font-semibold">New Batch Announcements</p><p class="text-xs text-slate-500 dark:text-slate-400">Be first to know when new batches open</p></div>
-            <label class="switch"><input type="checkbox" onchange="toast('Batch announcements updated')"><span class="slider-tg"></span></label>
-          </div>
-        </div>
-      </div>
 
-    </div>
-  </div>
-</section>
-
-<!-- ===================== LOCATION ===================== -->
-<section id="location" class="relative py-24 tech-grid">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <p class="text-xs font-bold tracking-[.3em] uppercase text-cyan-500 dark:text-cyan-300 mb-2">// Visit Us</p>
-      <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">FIND US IN <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">GAMHARIA</span></h2>
-    </div>
-
-    <div class="neon-card glass rounded-3xl overflow-hidden grid md:grid-cols-2">
-      <!-- Map placeholder -->
-      <div class="relative h-64 md:h-auto bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center min-h-[260px]">
-        <div class="absolute inset-0 tech-grid opacity-60"></div>
-        <div class="relative text-center">
-          <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/50 animate-glow-pulse mb-4">
-            <i class="fa-solid fa-location-dot text-white text-2xl"></i>
-          </div>
-          <p class="font-display font-bold text-white text-lg">Gamharia</p>
-          <p class="text-cyan-300 text-xs tracking-widest uppercase mt-1">Jharkhand · India</p>
-          <a href="https://www.google.com/maps/search/Nitesh+Classes+Gamharia+Jharkhand" target="_blank" rel="noopener"
-             class="inline-block mt-5 text-xs font-semibold px-5 py-2.5 rounded-full border border-cyan-400/50 text-cyan-300 hover:bg-cyan-400/10 transition-colors">
-            <i class="fa-solid fa-route mr-2"></i> Get Directions
-          </a>
-        </div>
-      </div>
-
-      <!-- Details -->
-      <div class="p-8 sm:p-10">
-        <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white mb-6">Nitesh Classes — Main Centre</h3>
-        <ul class="space-y-5 text-sm">
-          <li class="flex gap-4">
-            <span class="w-10 h-10 shrink-0 rounded-xl bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center"><i class="fa-solid fa-location-crosshairs text-cyan-500 dark:text-cyan-300"></i></span>
-            <div><p class="font-semibold text-slate-900 dark:text-white">Address</p><p class="text-slate-600 dark:text-slate-400">Main Market Road, Near Gamharia Railway Station, Gamharia, Dist. Seraikela-Kharsawan, Jharkhand — 832108</p></div>
-          </li>
-          <li class="flex gap-4">
-            <span class="w-10 h-10 shrink-0 rounded-xl bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center"><i class="fa-solid fa-clock text-cyan-500 dark:text-cyan-300"></i></span>
-            <div><p class="font-semibold text-slate-900 dark:text-white">Timings</p><p class="text-slate-600 dark:text-slate-400">Mon – Sat · 7:00 AM – 8:00 PM<br>Sunday · Doubt-clearing & tests</p></div>
-          </li>
-          <li class="flex gap-4">
-            <span class="w-10 h-10 shrink-0 rounded-xl bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center"><i class="fa-solid fa-phone text-cyan-500 dark:text-cyan-300"></i></span>
-            <div><p class="font-semibold text-slate-900 dark:text-white">Contact</p><p class="text-slate-600 dark:text-slate-400">Call / WhatsApp: +91 98765 43210</p></div>
-          </li>
-        </ul>
-        <div class="mt-8 flex gap-3">
-          <a href="https://wa.me/919876543210?text=Hi%20Nitesh%20Classes!%20I%20want%20to%20enquire%20about%20admissions." target="_blank" rel="noopener"
-             class="flex-1 text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-2xl transition-colors shadow-lg shadow-green-500/30">
-            <i class="fa-brands fa-whatsapp mr-2"></i> WhatsApp Us
-          </a>
-          <button onclick="openModal()" class="flex-1 btn-primary text-white font-semibold py-3 rounded-2xl">Free Demo</button>
-        </div>
+          <button type="submit" class="btn-submit">Submit Admission Enquiry 🚀</button>
+        </form>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===================== FOOTER ===================== -->
-<footer class="border-t border-blue-500/10 glass py-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500 dark:text-slate-400">
-    <p><i class="fa-solid fa-graduation-cap text-cyan-500 mr-1"></i> © 2026 <strong class="text-slate-800 dark:text-slate-200">Nitesh Classes</strong>, Gamharia, Jharkhand. All rights reserved.</p>
-    <p>Math · Science · Social Studies — Class 6th to 12th</p>
-  </div>
-</footer>
+  <!-- LOCATION & CONTACT -->
+  <section id="location" style="background: #f1f5f9;">
+    <div class="section-container">
+      <div class="section-header">
+        <p>// Visit Us</p>
+        <h2>FIND US IN GAMHARIA</h2>
+      </div>
 
-<!-- ===================== FLOATING BUTTONS ===================== -->
-<!-- WhatsApp -->
-<a href="https://wa.me/919876543210?text=Hi%20Nitesh%20Classes!%20I%20want%20to%20book%20a%20free%20demo%20class."
-   target="_blank" rel="noopener" title="Chat on WhatsApp"
-   class="fixed bottom-6 left-6 z-50 w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 flex items-center justify-center shadow-xl shadow-green-500/40 hover:scale-110 transition-transform">
-  <i class="fa-brands fa-whatsapp text-white text-2xl"></i>
-</a>
-
-<!-- AI Chat -->
-<button id="chatBtn" onclick="toggleChat()" title="AI Assistant"
-        class="fixed bottom-6 right-6 z-50 w-15 h-15 p-4 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center shadow-xl shadow-cyan-500/50 hover:scale-110 transition-transform animate-glow-pulse">
-  <i id="chatBtnIcon" class="fa-solid fa-robot text-white text-2xl"></i>
-</button>
-
-<!-- Chat Panel -->
-<div id="chatPanel" class="fixed bottom-24 right-6 z-50 w-[92vw] max-w-sm glass rounded-3xl overflow-hidden shadow-2xl shadow-cyan-500/20 flex flex-col" style="height:460px">
-  <div class="bg-gradient-to-r from-cyan-500 to-blue-600 px-5 py-4 flex items-center gap-3">
-    <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center"><i class="fa-solid fa-robot text-white"></i></div>
-    <div class="flex-1">
-      <p class="font-semibold text-white text-sm">Nitesh AI Assistant</p>
-      <p class="text-[11px] text-cyan-100 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-green-300 animate-glow-pulse"></span> Online · replies instantly</p>
+      <div class="location-card">
+        <h3>Nitesh Classes — Main Centre</h3>
+        <p style="margin: 1rem 0; color: var(--text-muted);">
+          Main Market Road, Near Gamharia Railway Station, Gamharia, Dist. Seraikela-Kharsawan, Jharkhand — 832108
+        </p>
+        <p style="font-weight: 600;">Timings: Mon – Sat · 7:00 AM – 8:00 PM</p>
+        <p style="margin-top: 0.5rem; color: var(--primary); font-weight: 700;">Call / WhatsApp: +91 98765 43210</p>
+      </div>
     </div>
-    <button onclick="toggleChat()" class="text-white/80 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
-  </div>
+  </section>
 
-  <div id="chatBody" class="flex-1 overflow-y-auto p-4 space-y-3 text-sm">
-    <div class="flex gap-2">
-      <div class="chat-bubble-bot rounded-2xl rounded-tl-sm px-4 py-3 max-w-[80%]">
-        Namaste! <span class="font-semibold text-cyan-600 dark:text-cyan-300" id="botGreetName">Student</span> 👋 I'm the Nitesh Classes assistant. Ask me about <em>fees, batches, subjects, timings</em> or booking a free demo!
+  <!-- CHATBOT WIDGET -->
+  <div class="chat-widget">
+    <button class="chat-btn" onclick="toggleChat()">💬 Chat with Us</button>
+    <div class="chat-box" id="chatBox">
+      <div class="chat-header">
+        <span>Nitesh Classes Assistant</span>
+        <span style="cursor:pointer;" onclick="toggleChat()">✕</span>
+      </div>
+      <div class="chat-logs" id="chatLogs">
+        <div class="chat-msg bot">Hello! 😊 How can I help — fees, batches, subjects, timings, or booking a free demo?</div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" id="chatInput" placeholder="Ask something..." onkeydown="if(event.key==='Enter') sendChat()">
+        <button onclick="sendChat()">Send</button>
       </div>
     </div>
   </div>
 
-  <div class="px-4 pb-2 flex flex-wrap gap-2">
-    <button onclick="quickAsk('What are the fees?')" class="text-[11px] glass border border-cyan-400/30 px-3 py-1.5 rounded-full hover:bg-cyan-400/10 transition-colors">Fees?</button>
-    <button onclick="quickAsk('Which classes do you teach?')" class="text-[11px] glass border border-cyan-400/30 px-3 py-1.5 rounded-full hover:bg-cyan-400/10 transition-colors">Classes offered?</button>
-    <button onclick="quickAsk('Book a free demo class')" class="text-[11px] glass border border-cyan-400/30 px-3 py-1.5 rounded-full hover:bg-cyan-400/10 transition-colors">Free demo</button>
-    <button onclick="quickAsk('Where are you located?')" class="text-[11px] glass border border-cyan-400/30 px-3 py-1.5 rounded-full hover:bg-cyan-400/10 transition-colors">Location?</button>
-  </div>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Nitesh Classes, Gamharia, Jharkhand. All rights reserved.</p>
+    <p style="color: #94a3b8; margin-top: 0.4rem;">Math · Science · Social Studies — Class 6th to 12th</p>
+  </footer>
 
-  <div class="p-3 border-t border-blue-500/10 flex gap-2">
-    <input id="chatInput" type="text" placeholder="Type your question…" onkeydown="if(event.key==='Enter')sendChat()"
-           class="flex-1 glass rounded-full px-4 py-2.5 text-sm outline-none focus:ring-2 ring-cyan-400/60 bg-transparent">
-    <button onclick="sendChat()" class="w-10 h-10 shrink-0 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-white hover:scale-105 transition-transform">
-      <i class="fa-solid fa-paper-plane"></i>
-    </button>
-  </div>
-</div>
+  <!-- JAVASCRIPT CODE -->
+  <script>
+    function toggleChat() {
+      const box = document.getElementById('chatBox');
+      box.style.display = box.style.display === 'block' ? 'none' : 'block';
+    }
 
-<!-- ===================== DEMO BOOKING MODAL ===================== -->
-<div id="demoModal" class="hidden-modal fixed inset-0 z-[60] flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm" onclick="if(event.target===this)closeModal()">
-  <div class="modal-box glass rounded-3xl w-full max-w-md p-8 relative">
-    <button onclick="closeModal()" class="absolute top-4 right-5 text-slate-400 hover:text-slate-700 dark:hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
-    <div class="text-center mb-6">
-      <div class="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/40 mb-4">
-        <i class="fa-solid fa-bolt text-white text-2xl"></i>
-      </div>
-      <h3 class="font-display text-xl font-extrabold text-slate-900 dark:text-white">BOOK A FREE DEMO CLASS</h3>
-      <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Experience our teaching — no charges, no commitment.</p>
-    </div>
-    <form onsubmit="submitDemo(event)" class="space-y-4">
-      <div>
-        <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Student Name</label>
-        <input id="demoName" type="text" required placeholder="Full name" class="mt-1.5 w-full glass rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 ring-cyan-400/60 bg-transparent">
-      </div>
-      <div>
-        <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Class</label>
-        <select id="demoClass" required class="mt-1.5 w-full glass rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 ring-cyan-400/60 bg-transparent dark:bg-slate-900/40">
-          <option value="">Select class</option>
-          <option>Class 6</option><option>Class 7</option><option>Class 8</option>
-          <option>Class 9</option><option>Class 10</option><option>Class 11</option><option>Class 12</option>
-        </select>
-      </div>
-      <div>
-        <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Phone Number</label>
-        <input id="demoPhone" type="tel" required pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number"
-               class="mt-1.5 w-full glass rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 ring-cyan-400/60 bg-transparent">
-      </div>
-      <button type="submit" class="w-full btn-primary text-white font-semibold py-3.5 rounded-2xl tracking-wide">
-        <i class="fa-solid fa-paper-plane mr-2"></i> Confirm Free Demo
-      </button>
-      <p class="text-center text-[11px] text-slate-500 dark:text-slate-400"><i class="fa-solid fa-shield-halved text-cyan-500 mr-1"></i> Your details are safe. We'll call you within 24 hours.</p>
-    </form>
-  </div>
-</div>
+    function bubble(msg, sender) {
+      const logs = document.getElementById('chatLogs');
+      const div = document.createElement('div');
+      div.className = `chat-msg ${sender}`;
+      div.textContent = msg;
+      logs.appendChild(div);
+      logs.scrollTop = logs.scrollHeight;
+    }
 
-<!-- ===================== TOAST ===================== -->
-<div id="toast" class="fixed bottom-24 left-1/2 -translate-x-1/2 z-[70] glass rounded-full px-6 py-3 text-sm font-semibold shadow-2xl shadow-cyan-500/30 flex items-center gap-2">
-  <i class="fa-solid fa-circle-check text-green-500"></i><span id="toastMsg">Done!</span>
-</div>
+    function botReply(text) {
+      const s = text.toLowerCase();
+      let reply = 'That\'s a good question! For detailed info, call us or visit our center. Ask me about: fees, classes, subjects, timings, or demo class!';
+      
+      if (/(fee|fees|cost|charge)/.test(s)) {
+        reply = 'Our fee structure is very affordable! Please submit the Enquiry Form or visit our center for class-wise fee details.';
+      } else if (/(demo|class|book|join)/.test(s)) {
+        reply = 'Great choice! Just fill the Enquiry Form above with your name, class, and phone number to book a FREE Demo class. 🚀';
+      } else if (/(subject|math|science|social|sst)/.test(s)) {
+        reply = 'We specialize in: Mathematics, Science (Physics, Chemistry, Biology), and Social Studies for Classes 6th to 12th.';
+      } else if (/(where|location|address|gamharia)/.test(s)) {
+        reply = 'We are at Main Market Road, near Gamharia Railway Station, Gamharia, Jharkhand — 832108.';
+      } else if (/(time|timing|hour)/.test(s)) {
+        reply = 'We are open Monday to Saturday, 7:00 AM – 8:00 PM with separate morning and evening batches.';
+      } else if (/(hi|hello|hey)/.test(s)) {
+        reply = 'Hello! 😊 How can I help you today?';
+      }
 
-<!-- ===================== JAVASCRIPT ===================== -->
-<script>
-/* ---------- THEME ---------- */
-function applyTheme(mode) {
-  const dark = mode === 'dark' || (mode === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-  document.documentElement.classList.toggle('dark', dark);
-  const icon = dark ? 'fa-sun' : 'fa-moon';
-  ['themeIcon','themeIconMobile'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) { el.classList.remove('fa-sun','fa-moon'); el.classList.add(icon); el.classList.toggle('text-yellow-300', dark); }
-  });
-}
-function setTheme(mode) {
-  localStorage.setItem('nc-theme', mode);
-  applyTheme(mode);
-  toast(mode === 'auto' ? 'Theme follows your system' : mode.charAt(0).toUpperCase() + mode.slice(1) + ' mode enabled');
-}
-function toggleTheme() {
-  const next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
-  setTheme(next);
-}
-applyTheme(localStorage.getItem('nc-theme') || 'auto');
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-  if (localStorage.getItem('nc-theme') === 'auto') applyTheme('auto');
-});
+      setTimeout(() => bubble(reply, 'bot'), 500);
+    }
 
-/* ---------- TOAST ---------- */
-let toastTimer;
-function toast(msg) {
-  const t = document.getElementById('toast');
-  document.getElementById('toastMsg').textContent = msg;
-  t.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
-}
+    function sendChat() {
+      const inp = document.getElementById('chatInput');
+      const v = inp.value.trim();
+      if (!v) return;
+      bubble(v, 'user');
+      inp.value = '';
+      botReply(v);
+    }
 
-/* ---------- MODAL ---------- */
-function openModal() { document.getElementById('demoModal').classList.remove('hidden-modal'); }
-function closeModal() { document.getElementById('demoModal').classList.add('hidden-modal'); }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+    /* COUNTERS ANIMATION */
+    const counterObs = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        const el = en.target;
+        const target = +el.dataset.target;
+        let cur = 0;
+        const step = Math.max(1, Math.ceil(target / 60));
+        const iv = setInterval(() => {
+          cur += step;
+          if (cur >= target) {
+            cur = target;
+            clearInterval(iv);
+          }
+          el.textContent = cur;
+        }, 30);
+        counterObs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
 
-function submitDemo(e) {
-  e.preventDefault();
-  const name = document.getElementById('demoName').value.trim();
-  const cls  = document.getElementById('demoClass').value;
-  const phone = document.getElementById('demoPhone').value.trim();
-  if (!/^[0-9]{10}$/.test(phone)) { toast('Please enter a valid 10-digit phone number'); return; }
-  const bookings = JSON.parse(localStorage.getItem('nc-bookings') || '[]');
-  bookings.push({ name, cls, phone, at: new Date().toISOString() });
-  localStorage.setItem('nc-bookings', JSON.stringify(bookings));
-  closeModal();
-  e.target.reset();
-  toast(`Demo booked for ${name} (${cls})! We'll call you soon. 🎉`);
-}
+    document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
+  </script>
 
-/* ---------- PROFILE PREFS ---------- */
-(function loadPrefs() {
-  const n = localStorage.getItem('nc-pref-name');
-  if (n) {
-    document.getElementById('prefName').value = n;
-    document.getElementById('botGreetName').textContent = n.split(' ')[0];
-  }
-  const c = localStorage.getItem('nc-pref-class');
-  if (c) document.getElementById('prefClass').value = c;
-})();
-function savePrefs() {
-  const n = document.getElementById('prefName').value.trim();
-  const c = document.getElementById('prefClass').value;
-  if (n) localStorage.setItem('nc-pref-name', n);
-  if (c) localStorage.setItem('nc-pref-class', c);
-  if (n) document.getElementById('botGreetName').textContent = n.split(' ')[0];
-  toast(n || c ? 'Preferences saved ✔' : 'Nothing to save yet');
-}
-
-/* ---------- AI CHAT ---------- */
-function toggleChat() {
-  const p = document.getElementById('chatPanel');
-  p.classList.toggle('open');
-  const i = document.getElementById('chatBtnIcon');
-  i.className = p.classList.contains('open') ? 'fa-solid fa-xmark text-white text-2xl' : 'fa-solid fa-robot text-white text-2xl';
-  if (p.classList.contains('open')) document.getElementById('chatInput').focus();
-}
-function bubble(text, who) {
-  const body = document.getElementById('chatBody');
-  const wrap = document.createElement('div');
-  wrap.className = who === 'user' ? 'flex justify-end' : 'flex gap-2';
-  const div = document.createElement('div');
-  if (who === 'user') {
-    div.className = 'chat-bubble-user text-white rounded-2xl rounded-tr-sm px-4 py-3 max-w-[80%]';
-  } else {
-    div.className = 'chat-bubble-bot rounded-2xl rounded-tl-sm px-4 py-3 max-w-[80%]';
-  }
-  div.textContent = text;
-  wrap.appendChild(div);
-  body.appendChild(wrap);
-  body.scrollTop = body.scrollHeight;
-}
-function botReply(q) {
-  const t = document.createElement('div');
-  t.className = 'flex gap-2';
-  t.innerHTML = '<div class="chat-bubble-bot rounded-2xl rounded-tl-sm px-4 py-3"><span class="typing"><span></span><span></span><span></span></span></div>';
-  const body = document.getElementById('chatBody');
-  body.appendChild(t); body.scrollTop = body.scrollHeight;
-  setTimeout(() => {
-    t.remove();
-    bubble(replyFor(q), 'bot');
-  }, 900 + Math.random() * 700);
-}
-function replyFor(q) {
-  const s = q.toLowerCase();
-  if (/(fee|price|cost|charge|charge)/.test(s))
-    return 'Our fee structure is very affordable and varies by class (6th–10th foundation vs 11th–12th boards). Call or WhatsApp us at +91 98765 43210 for the exact fee chart — and the first demo class is completely FREE!';
-  if (/(class|batch|standard|6|7|8|9|10|11|12)/.test(s) && /(which|what|teach|offer)/.test(s) || /class(es)? do you teach|which classes/.test(s))
-    return 'We coach students from Class 6th to 12th in three core subjects — Math, Science and Social Studies — with separate foundation and board-exam batches.';
-  if (/(demo|free|trial|book)/.test(s)) {
-    setTimeout(openModal, 600);
-    return 'Great choice! I\'m opening the Free Demo booking form for you right now — just fill in your name, class and phone number. It takes 20 seconds! 🚀';
-  }
-  if (/(subject|math|science|social|sst)/.test(s))
-    return 'We specialize in three subjects: ➤ Mathematics (concept + problem drills) ➤ Science (Physics, Chemistry, Biology) ➤ Social Studies (History, Geography, Civics, Economics) — all aligned to NCERT/JAC & CBSE boards.';
-  if (/(where|location|address|gamharia|reach|direction)/.test(s))
-    return 'We\'re at Main Market Road, near Gamharia Railway Station, Gamharia, Seraikela-Kharsawan, Jharkhand — 832108. Tap "Get Directions" in the Location section, or WhatsApp us for a landmark guide!';
-  if (/(time|timing|hour|schedule|when)/.test(s))
-    return 'We\'re open Monday to Saturday, 7:00 AM – 8:00 PM with morning and evening batches. Sundays are reserved for doubt-clearing sessions and weekly tests.';
-  if (/(hi|hello|hey|namaste|namaskar)/.test(s))
-    return 'Hello! 😊 How can I help — fees, batches, subjects, timings, or booking a free demo?';
-  if (/(phone|call|contact|whatsapp|number)/.test(s))
-    return 'You can reach us at +91 98765 43210 (call or WhatsApp). The WhatsApp button is right here on the page — bottom-left corner. Green and glowing, you can\'t miss it!';
-  if (/(result|success|score|percentage|top)/.test(s))
-    return 'Our students consistently score 90%+ in board exams, with a 95% overall success rate. Small batches and personal mentoring make the difference! 📈';
-  return 'That\'s a good question! For detailed info, tap the WhatsApp button (bottom-left) or call +91 98765 43210. Meanwhile, try asking me about: fees 💰, classes 📚, subjects 🔬, timings ⏰, or a free demo 🚀.';
-}
-function sendChat() {
-  const inp = document.getElementById('chatInput');
-  const v = inp.value.trim();
-  if (!v) return;
-  bubble(v, 'user');
-  inp.value = '';
-  botReply(v);
-}
-function quickAsk(q) { bubble(q, 'user'); botReply(q); }
-
-/* ---------- COUNTERS ---------- */
-const counterObs = new IntersectionObserver(entries => {
-  entries.forEach(en => {
-    if (!en.isIntersecting) return;
-    const el = en.target, target = +el.dataset.target;
-    let cur = 0; const step = Math.max(1, Math.ceil(target / 60));
-    const iv = setInterval(() => {
-      cur += step;
-      if (cur >= target) { cur = target; clearInterval(iv); }
-      el.textContent = cur;
-    }, 24);
-    counterObs.unobserve(el);
-  });
-}, { threshold: .6 });
-document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
-</script>
 </body>
 </html>
