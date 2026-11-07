@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nitesh Classes Chhota Gamharia | Best Coaching Class 6th-12th</title>
-  <meta name="description" content="Nitesh Classes, Chhota Gamharia, Jharkhand - Premium coaching for Class 6th to 12th (Maths, Science, SST, PCM, PCB).">
+  <meta name="description" content="Nitesh Classes, Chhota Gamharia, Jharkhand - Coaching for Class 6th to 12th.">
   
-  <!-- Google Fonts & Font Awesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -55,11 +54,21 @@
     .stat-card h3 { font-size: 2rem; color: var(--accent); font-weight: 800; }
     .stat-card p { font-size: 0.85rem; color: #94a3b8; margin: 0; }
 
-    /* Main Container */
+    /* Container */
     .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
     .section-title { text-align: center; margin-bottom: 40px; }
     .section-title h2 { font-size: 2rem; font-weight: 800; color: var(--dark); }
     .section-title p { color: var(--text-muted); font-size: 1rem; }
+
+    /* Teacher Profile Section */
+    .teacher-box { background: var(--card-bg); border-radius: 20px; padding: 30px; text-align: center; max-width: 500px; margin: 0 auto 50px auto; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+    .teacher-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary); box-shadow: 0 6px 18px rgba(37,99,235,0.2); margin-bottom: 15px; }
+
+    /* Photo Gallery Grid */
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+    .gallery-card { background: var(--card-bg); border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+    .gallery-card img { width: 100%; height: 240px; object-fit: cover; display: block; }
+    .gallery-card p { padding: 15px; text-align: center; font-weight: 600; color: var(--dark); font-size: 0.95rem; }
 
     /* Courses Grid */
     .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
@@ -78,12 +87,12 @@
     .form-group input:focus, .form-group select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
     .btn-submit { width: 100%; background: var(--primary); color: white; border: none; padding: 14px; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: 0.3s; }
     .btn-submit:hover { background: var(--primary-hover); }
+    #formStatus { margin-top: 15px; padding: 12px; border-radius: 8px; font-weight: 600; text-align: center; display: none; }
 
     /* Footer */
     footer { background: var(--dark); color: #94a3b8; text-align: center; padding: 30px 20px; margin-top: 60px; font-size: 0.9rem; }
     footer p { margin-bottom: 5px; }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .hero h1 { font-size: 2rem; }
       .nav-links { display: none; }
@@ -101,6 +110,7 @@
     <div class="nav-links">
       <a href="#home">Home</a>
       <a href="#courses">Courses</a>
+      <a href="#gallery">Gallery</a>
       <a href="#admission" class="btn-nav">Admission</a>
     </div>
   </nav>
@@ -132,6 +142,16 @@
     </div>
   </section>
 
+  <!-- Instructor Section -->
+  <div class="container">
+    <div class="teacher-box">
+      <img src="sir.jpg" alt="Nitesh Sir" class="teacher-img" onerror="this.src='https://via.placeholder.com/140?text=Nitesh+Sir'">
+      <h3 style="color: var(--dark); font-size: 1.3rem;">Nitesh Sir</h3>
+      <p style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">M.Sc. Mathematics | Lead Mentor</p>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 8px;">Guiding Class 6th to 12th students towards board excellence with clear concepts and regular practice.</p>
+    </div>
+  </div>
+
   <!-- Courses Section -->
   <div class="container" id="courses">
     <div class="section-title">
@@ -140,30 +160,47 @@
     </div>
 
     <div class="courses-grid">
-      <!-- Course 1 -->
       <div class="course-card">
         <h3>Class 6th – 10th</h3>
-        <p style="color: var(--primary); font-weight: 600;">Foundation Track</p>
+        <p style="color: var(--primary); font-weight: 600;">Foundation Track (Mathematics & Science)</p>
         <ul>
-          <li><i class="fa-solid fa-circle-check"></i> Mathematics — NCERT + Mental Math</li>
-          <li><i class="fa-solid fa-circle-check"></i> Science — Physics, Chemistry, Biology</li>
-          <li><i class="fa-solid fa-circle-check"></i> Social Studies — History, Civics, SST</li>
-          <li><i class="fa-solid fa-circle-check"></i> Weekly Tests & Progress Tracking</li>
+          <li><i class="fa-solid fa-circle-check"></i> Concept Based Learning</li>
+          <li><i class="fa-solid fa-circle-check"></i> Doubt Clearing Session</li>
+          <li><i class="fa-solid fa-circle-check"></i> Regular Tests & Practice</li>
+          <li><i class="fa-solid fa-circle-check"></i> Personal Guidance</li>
         </ul>
         <a href="#admission" class="btn-main" style="display: inline-block; width: 100%; text-align: center;">Join Batch</a>
       </div>
 
-      <!-- Course 2 -->
       <div class="course-card">
         <h3>Class 11th – 12th</h3>
-        <p style="color: var(--accent); font-weight: 600;">Board Mastery</p>
+        <p style="color: var(--accent); font-weight: 600;">Board Mastery (PCM / Science)</p>
         <ul>
-          <li><i class="fa-solid fa-circle-check"></i> Mathematics — Calculus & Algebra</li>
-          <li><i class="fa-solid fa-circle-check"></i> Science — PCM / PCB Stream</li>
-          <li><i class="fa-solid fa-circle-check"></i> Board-Pattern Mock Tests</li>
+          <li><i class="fa-solid fa-circle-check"></i> Mathematics & Physics Focus</li>
+          <li><i class="fa-solid fa-circle-check"></i> Chemistry & Science Track</li>
+          <li><i class="fa-solid fa-circle-check"></i> Performance Analysis</li>
           <li><i class="fa-solid fa-circle-check"></i> Chapter Revision Marathons</li>
         </ul>
         <a href="#admission" class="btn-main" style="display: inline-block; width: 100%; text-align: center;">Join Batch</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Photo Gallery Section -->
+  <div class="container" id="gallery">
+    <div class="section-title">
+      <h2>📸 CAMPUS & MOMENTS</h2>
+      <p>A glimpse of our classroom study space and student celebrations</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="classroom.jpg" alt="Classroom Study Space" onerror="this.src='https://via.placeholder.com/320x240?text=Classroom'">
+        <p>📚 Classroom Study Space</p>
+      </div>
+      <div class="gallery-card">
+        <img src="students.jpg" alt="Student Moments" onerror="this.src='https://via.placeholder.com/320x240?text=Students+Moments'">
+        <p>🎓 Batch & Student Moments</p>
       </div>
     </div>
   </div>
@@ -176,9 +213,7 @@
     </div>
 
     <div class="admission-section">
-      <!-- Web3Forms Form Integration -->
-      <form action="https://api.web3forms.com/submit" method="POST">
-        <!-- Web3Forms Access Key Included -->
+      <form id="admissionForm">
         <input type="hidden" name="access_key" value="1bd4d7e3-38cf-4cc9-af1f-c3429fb81bc6">
         <input type="hidden" name="subject" value="New Admission Inquiry - Nitesh Classes">
 
@@ -199,10 +234,62 @@
           <label>Mobile Number (WhatsApp)</label>
           <input type="tel" name="Mobile_Number" placeholder="+91 72949 35568" required>
         </div>
-        <button type="submit" class="btn-submit">Submit Admission Request</button>
+        <button type="submit" class="btn-submit" id="submitBtn">Submit Admission Request</button>
       </form>
+      <div id="formStatus"></div>
     </div>
   </div>
+
+  <!-- JavaScript for Form Submission -->
+  <script>
+    const form = document.getElementById('admissionForm');
+    const statusDiv = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      submitBtn.innerText = 'Submitting...';
+      submitBtn.disabled = true;
+
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: json
+      })
+      .then(async (response) => {
+        let res = await response.json();
+        if (response.status == 200) {
+            statusDiv.style.display = 'block';
+            statusDiv.style.background = '#d1fae5';
+            statusDiv.style.color = '#065f46';
+            statusDiv.innerHTML = "✅ Success! Form Submit ho gaya hai. Hum jald hi call karenge.";
+            form.reset();
+        } else {
+            statusDiv.style.display = 'block';
+            statusDiv.style.background = '#fee2e2';
+            statusDiv.style.color = '#991b1b';
+            statusDiv.innerHTML = "❌ Error: " + res.message;
+        }
+      })
+      .catch(error => {
+        statusDiv.style.display = 'block';
+        statusDiv.style.background = '#fee2e2';
+        statusDiv.style.color = '#991b1b';
+        statusDiv.innerHTML = "❌ Form submit nahi ho paya. Connection check karein.";
+      })
+      .then(function() {
+        submitBtn.innerText = 'Submit Admission Request';
+        submitBtn.disabled = false;
+      });
+    });
+  </script>
 
   <!-- Location Info -->
   <div class="container" style="text-align: center; border-top: 1px solid #e2e8f0; padding-top: 40px;">
@@ -274,7 +361,7 @@
       if (q.includes("time") || q.includes("batch")) return "Classes Mon-Sat subah <b>7:00 AM se shaam 8:00 PM</b> tak chalti hain.";
       if (q.includes("kahan") || q.includes("address") || q.includes("location")) return "Humara centre <b>Chhota Gamharia, Jharkhand</b> me hai. Call: +91 72949 35568";
       if (q.includes("number") || q.includes("contact") || q.includes("phone") || q.includes("call")) return "Aap hume is number par call ya WhatsApp kar sakte hain: <b>+91 72949 35568</b>";
-      if (q.includes("subject") || q.includes("class")) return "Hum Class 6th-10th (Maths, Science, SST) aur Class 11th-12th (PCM/PCB) padhate hain.";
+      if (q.includes("subject") || q.includes("class")) return "Hum Class 6th-10th aur Class 11th-12th ke liye Mathematics, Science aur Physics padhate hain.";
       return "Kripya online Admission Form bharein ya Chhota Gamharia centre par visit karein. Call: +91 72949 35568";
     }
   </script>
