@@ -25,7 +25,56 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
-    body { background-color: var(--bg-main); color: var(--text-main); line-height: 1.6; }
+    body { background-color: var(--bg-main); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+
+    /* Killer Opening Splash Screen Animation */
+    #splash-screen {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at center, #111827 0%, #05070b 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+    }
+    .splash-content {
+      text-align: center;
+    }
+    .splash-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #ffffff 30%, #60a5fa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: zoomInText 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .splash-title span { color: var(--accent); -webkit-text-fill-color: var(--accent); }
+    
+    .splash-credit {
+      font-size: 0.95rem;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(15px);
+      animation: slideUpCredit 0.8s ease 0.5s forwards;
+      text-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+    }
+
+    @keyframes zoomInText {
+      0% { transform: scale(0.8); opacity: 0; filter: blur(10px); }
+      100% { transform: scale(1); opacity: 1; filter: blur(0); }
+    }
+    @keyframes slideUpCredit {
+      0% { transform: translateY(15px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
 
     /* Navigation */
     nav { position: sticky; top: 0; background: rgba(9, 13, 22, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); z-index: 1000; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; }
@@ -103,6 +152,14 @@
   </style>
 </head>
 <body>
+
+  <!-- Animated Opening Splash Screen -->
+  <div id="splash-screen">
+    <div class="splash-content">
+      <div class="splash-title">NITESH <span>CLASSES</span></div>
+      <div class="splash-credit">rohanmandal0076</div>
+    </div>
+  </div>
 
   <!-- Navigation Bar -->
   <nav>
@@ -199,17 +256,14 @@
 
     <div class="gallery-grid">
       <div class="gallery-card">
-        <!-- Classroom Study Space -->
         <img src="IMG-20261107-WA0177.jpg" alt="Classroom Study Space" onerror="this.src='https://via.placeholder.com/320x240?text=Classroom'">
         <p>📚 Classroom Study Space</p>
       </div>
       <div class="gallery-card">
-        <!-- Students & Sir Batch Moment -->
         <img src="IMG-20261107-WA0160.jpg" alt="Student Moments" onerror="this.src='https://via.placeholder.com/320x240?text=Students+Moments'">
         <p>🎓 Batch & Student Moments</p>
       </div>
       <div class="gallery-card">
-        <!-- Teachers & Staff Moment -->
         <img src="IMG-20261107-WA0176.jpg" alt="Faculty & Staff Moment" onerror="this.src='https://via.placeholder.com/320x240?text=Faculty+Moments'">
         <p>🤝 Faculty & Celebration</p>
       </div>
@@ -251,8 +305,19 @@
     </div>
   </div>
 
-  <!-- JavaScript for Form Submission -->
+  <!-- JavaScript for Splash Screen Animation & Form -->
   <script>
+    // Smooth Splash Screen Fade out
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        const splash = document.getElementById('splash-screen');
+        splash.style.opacity = '0';
+        setTimeout(function() {
+          splash.style.display = 'none';
+        }, 700);
+      }, 1500); // 1.5 seconds animation time
+    });
+
     const form = document.getElementById('admissionForm');
     const statusDiv = document.getElementById('formStatus');
     const submitBtn = document.getElementById('submitBtn');
@@ -316,6 +381,7 @@
   <footer>
     <p>© 2026 Nitesh Classes, Chhota Gamharia, Jharkhand. All rights reserved.</p>
     <p>Math · Physics · Chemistry · Science (CBSE | ICSE) — Class 6th to 12th | Call: +91 72949 35568</p>
+    <p style="font-size: 0.8rem; color: var(--accent); margin-top: 6px; font-weight: 700;">Designed & Developed by rohanmandal0076</p>
   </footer>
 
   <!-- ================= AI CHATBOT CODE START ================= -->
@@ -323,37 +389,4 @@
     .ai-chat-btn { position: fixed; bottom: 25px; right: 25px; background: var(--primary); color: #ffffff; border: none; border-radius: 50px; padding: 14px 22px; font-size: 15px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4); z-index: 9999; display: flex; align-items: center; gap: 8px; transition: transform 0.2s ease; }
     .ai-chat-btn:hover { transform: scale(1.05); }
     .ai-chat-box { display: none; position: fixed; bottom: 85px; right: 25px; width: 330px; height: 420px; background: #111827; border: 1px solid var(--border-color); border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); flex-direction: column; overflow: hidden; z-index: 9999; }
-    .ai-chat-header { background: #1f2937; color: #ffffff; padding: 14px 16px; font-weight: bold; font-size: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); }
-    .ai-chat-close { cursor: pointer; font-size: 18px; }
-    .ai-chat-body { flex: 1; padding: 12px; overflow-y: auto; font-size: 14px; background: #090d16; display: flex; flex-direction: column; gap: 10px; }
-    .msg-bot { background: #1f2937; color: #f3f4f6; padding: 10px 12px; border-radius: 12px 12px 12px 2px; max-width: 85%; word-wrap: break-word; font-size: 0.9rem; }
-    .msg-user { background: var(--primary); color: #ffffff; padding: 10px 12px; border-radius: 12px 12px 2px 12px; align-self: flex-end; max-width: 85%; word-wrap: break-word; font-size: 0.9rem; }
-    .ai-chat-footer { display: flex; border-top: 1px solid var(--border-color); background: #111827; }
-    .ai-chat-footer input { flex: 1; border: none; background: transparent; color: #fff; padding: 12px 14px; outline: none; font-size: 14px; }
-    .ai-chat-footer button { background: var(--primary); color: #ffffff; border: none; padding: 12px 16px; cursor: pointer; font-weight: bold; }
-  </style>
-
-  <button class="ai-chat-btn" onclick="toggleNiteshChat()">💬 Ask Nitesh AI</button>
-
-  <div class="ai-chat-box" id="niteshChatWindow">
-    <div class="ai-chat-header">
-      <span>🤖 Nitesh Classes Assistant</span>
-      <span class="ai-chat-close" onclick="toggleNiteshChat()">✖</span>
-    </div>
-    <div class="ai-chat-body" id="niteshChatMessages">
-      <div class="msg-bot">Namaste! Nitesh Classes Chhota Gamharia me aapka swagat hai. Main aapki kya madad kar sakta hoon?</div>
-    </div>
-    <div class="ai-chat-footer">
-      <input type="text" id="niteshUserInput" placeholder="Fees, timing ya subjects..." onkeypress="handleNiteshKeyPress(event)">
-      <button onclick="sendNiteshMessage()">Send</button>
-    </div>
-  </div>
-
-  <script>
-    function toggleNiteshChat() {
-      var w = document.getElementById('niteshChatWindow');
-      w.style.display = (w.style.display === 'flex') ? 'none' : 'flex';
-      if(w.style.display === 'flex') document.getElementById('niteshUserInput').focus();
-    }
-    function handleNiteshKeyPress(e) { if (e.key === 'Enter') sendNiteshMessage(); }
-    function sendNiteshMess
+    .ai-chat-header { background: #1f2937; color: #ffffff; padding: 14px 16px; font-weight: bold; fo
